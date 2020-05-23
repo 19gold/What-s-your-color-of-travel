@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="java.sql.SQLException"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.io.*"%>
 <%@page import="DB.databases"%>
 <%@page import="DB.DBvar"%>
 <%@page import="DB.DBlist"%>
@@ -17,7 +15,7 @@
 </head>
 <body style="overflow-x: hidden;">
 
- 
+
 	<br>
 	<br>
 	<br>
@@ -149,57 +147,92 @@
 
 	
 
-<%-- 
+
 	<%
-	request.setCharacterEncoding("euc-kr");
-	databases databases = new databases();
-	DBvar dv = new DBvar();
-	DBlist dl = new DBlist();
-	Connection con = databases.getCon();
-	System.out.println("surveyAnswer.jsp에서 DB연동 확인");
-	String[] country = { "훗카이도", "혼슈", "시코쿠", "큐수", "오키나와" };
-	String[] mood = { "조용한 분위기", "활기찬 분위기", "느긋한 분위기", "독특한 분위기", "이국적인 분위기" };
+		request.setCharacterEncoding("UTF-8");
+	//databases databases = new databases();
+	//DBvar dv = new DBvar();
+	//DBlist dl = new DBlist();
+	%>
+	<%-- Connection con = databases.getCon();--%>
+	<%
+		System.out.println("surveyAnswer.jsp에서 DB연동 확인");
+	
+	String[] country = { "홋카이도", "혼슈", "시코쿠", "규슈", "오키나와" };
+	String[] mood = { "조용한_분위기", "활기찬_분위기", "느긋한_분위기", "독특한_분위기", "이국적인_분위기" };
 	String[] nature = { "산", "바다", "시골", "도시", "눈" };
 	String[] activity = { "자연", "역사", "문화체험", "먹거리", "액티비티" };
-	String[] character = { "활발한 성격", "느긋한 성격", "급한 성격", "온화한 성격", "게으른 성격" };
+	String[] character = { "활발한_성격", "느긋한_성격", "급한_성격", "온화한_성격", "게으른_성격" };
 	String result = request.getParameter("result");
 	System.out.println("result -.>" + result);
 	String[] temp = result.split(",");
 	String[] answer = new String[5];
 	//System.out.println("#####1");
+	String selectedCountry = country[Integer.parseInt(temp[0])];//지역 섬
 	//System.out.println("#####2");
-	String selectedMood = mood[Integer.parseInt(temp[1])];
+	String selectedMood = mood[Integer.parseInt(temp[1])];//분위기
 	////System.out.println("#####3");
-	String selectedNature = nature[Integer.parseInt(temp[2])];
+	String selectedNature = nature[Integer.parseInt(temp[2])];//자연
 	//System.out.println("#####4");
-	String selectedActivity = activity[Integer.parseInt(temp[3])];
+	String selectedActivity = activity[Integer.parseInt(temp[3])];//활동
 	//System.out.println("#####5");
-	String selectedCharacter = character[Integer.parseInt(temp[4])];
+	String selectedCharacter = character[Integer.parseInt(temp[4])];//성격
 	//System.out.println("#####6");
-	System.out.println(selectedCountry);
-	System.out.println(selectedMood);
-	System.out.println(selectedNature);
-	System.out.println(selectedActivity);
-	System.out.println(selectedCharacter);
+	System.out.println(selectedCountry);//혼슈
+	System.out.println(selectedMood);//느긋한
+	System.out.println(selectedNature);//시골
+	System.out.println(selectedActivity);//문화체험
+	System.out.println(selectedCharacter);//느긋한 - > DB에서 사용 안하고 프론트 쪽에서 색 표현시 사용
 	System.out.println("jsp에서 값 받기 성공");
-	dv.setLocation(selectedCountry);
-	dv.setMood(selectedMood);
-	dv.setNature(selectedNature);
-	dv.setActivity(selectedActivity);
-	//System.out.println("dv.set~~");
-	
-	ArrayList<String> answers = dl.Asurvey(dv);
-	for(String ans : answers) {//
-		System.out.println(ans);
-	
-	}
-%>
+	%>
 
 
---%>
+
+	<%
+	
+	Blob image =null;
+	Connection con = null;
+	byte[] imgData = null;
+	Statement stmt = null;
+	ResultSet rs = null;
+
+	try {
+		Class.forName("com.mysql.jdbc.Driver");
+		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gold?&useSSL=false", "root", "mirim2");
+		System.out.println("DB연동성공");
+		stmt = con.createStatement();
+		System.out.println("stmt줄 실행");
+		String query = "SELECT image FROM info WHERE area='" + selectedCountry + "' AND mood='" + selectedMood
+		+ "' AND place='" + selectedNature + "' AND activity='" + selectedActivity + "'";
+		System.out.println(query);
+		rs = stmt.executeQuery(query);
+		//out은 jsp가 원래 가지고 있는 내장객체
+		System.out.println("rs : "+rs);
+
+		if(rs.next()) {
+			image = rs.getBlob(1);
+			imgData = image.getBytes(1, (int) image.length());
+			String encoded = Base64.getEncoder().encodeToString(imgData);
+			
+			%>
+	<!-- 여기 참고 -->
+	<img id="photoImage"
+				src="data:image/png;base64, <%=encoded%>"/>
+	
+	<!-- <img id="photoImage" src="data:image/png;base64,/>-->
+	<%		
+		}else{%>
+			<!-- 여기 바꿔야댐 -->
+			<script> alert('해당하는 정보가 없습니다..');</script>
+		
+		<% 	
+			return;
+		}
+	} catch (Exception e) {
+		out.println("Unable To Display image");
+		out.println("Image Display Error=" + e.getMessage());
+		return;
+	} 																																																																																																																				%>
 
 </body>
-
-
-
 </html>
