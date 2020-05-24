@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="result.css?var=1" rel="stylesheet" type="text/css">
-
+<title>결과창</title>
 </head>
 <body style="overflow-x: hidden;">
 
@@ -145,7 +145,7 @@
 
 
 
-	
+
 
 
 	<%
@@ -157,9 +157,9 @@
 	<%-- Connection con = databases.getCon();--%>
 	<%
 		System.out.println("surveyAnswer.jsp에서 DB연동 확인");
-	
+
 	String[] country = { "홋카이도", "혼슈", "시코쿠", "규슈", "오키나와" };
-	String[] mood = { "조용한_분위기", "활기찬_분위기", "느긋한_분위기", "독특한_분위기", "이국적인_분위기" };
+	String[] mood = { "조용한_분위기", "시끄러운_분위기", "느긋한_분위기", "독특한_분위기", "이국적인_분위기" };
 	String[] nature = { "산", "바다", "시골", "도시", "눈" };
 	String[] activity = { "자연", "역사", "문화체험", "먹거리", "액티비티" };
 	String[] character = { "활발한_성격", "느긋한_성격", "급한_성격", "온화한_성격", "게으른_성격" };
@@ -170,13 +170,13 @@
 	//System.out.println("#####1");
 	String selectedCountry = country[Integer.parseInt(temp[0])];//지역 섬
 	//System.out.println("#####2");
-	String selectedMood = mood[Integer.parseInt(temp[1])];//분위기
+	String selectedMood = mood[Integer.parseInt(temp[2])];//분위기
 	////System.out.println("#####3");
-	String selectedNature = nature[Integer.parseInt(temp[2])];//자연
+	String selectedNature = nature[Integer.parseInt(temp[3])];//자연
 	//System.out.println("#####4");
-	String selectedActivity = activity[Integer.parseInt(temp[3])];//활동
+	String selectedActivity = activity[Integer.parseInt(temp[4])];//활동
 	//System.out.println("#####5");
-	String selectedCharacter = character[Integer.parseInt(temp[4])];//성격
+	String selectedCharacter = character[Integer.parseInt(temp[5])];//성격
 	//System.out.println("#####6");
 	System.out.println(selectedCountry);//혼슈
 	System.out.println(selectedMood);//느긋한
@@ -184,55 +184,54 @@
 	System.out.println(selectedActivity);//문화체험
 	System.out.println(selectedCharacter);//느긋한 - > DB에서 사용 안하고 프론트 쪽에서 색 표현시 사용
 	System.out.println("jsp에서 값 받기 성공");
-	%>
 
-
-
-	<%
-	
-	Blob image =null;
+	Blob image = null;
 	Connection con = null;
 	byte[] imgData = null;
 	Statement stmt = null;
 	ResultSet rs = null;
-
+	String country_db = null;
+	String link_db = null;
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
 		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gold?&useSSL=false", "root", "mirim2");
 		System.out.println("DB연동성공");
 		stmt = con.createStatement();
 		System.out.println("stmt줄 실행");
-		String query = "SELECT image FROM info WHERE area='" + selectedCountry + "' AND mood='" + selectedMood
-		+ "' AND place='" + selectedNature + "' AND activity='" + selectedActivity + "'";
+		String query = "SELECT country, link, image FROM info WHERE area='" + selectedCountry + "' AND mood='"
+		+ selectedMood + "' AND place='" + selectedNature + "' AND activity='" + selectedActivity + "'";
 		System.out.println(query);
 		rs = stmt.executeQuery(query);
 		//out은 jsp가 원래 가지고 있는 내장객체
-		System.out.println("rs : "+rs);
-
-		if(rs.next()) {
-			image = rs.getBlob(1);
+		System.out.println("rs : " + rs);
+		while (rs.next()) {
+			country_db = rs.getString(1);
+			link_db = rs.getString(2);
+			image = rs.getBlob(3);
 			imgData = image.getBytes(1, (int) image.length());
 			String encoded = Base64.getEncoder().encodeToString(imgData);
-			
-			%>
-	<!-- 여기 참고 -->
-	<img id="photoImage"
-				src="data:image/png;base64, <%=encoded%>"/>
+	%>
+
+	<table>
+		<tr> 
+			<td><%=country_db %></td>
+		</tr>
+		<tr>
+			<td><a href="<%=link_db %>"><%=country_db %>&nbsp;홈페이지</a></td>
+		</tr>
+		<tr>
+			<img id="photoImage" src="data:image/png;base64, <%=encoded%>" width = "200" height="200"/>
+		</tr>
+	</table>
 	
-	<!-- <img id="photoImage" src="data:image/png;base64,/>-->
-	<%		
-		}else{%>
-			<!-- 여기 바꿔야댐 -->
-			<script> alert('해당하는 정보가 없습니다..');</script>
-		
-		<% 	
-			return;
+	<%
 		}
 	} catch (Exception e) {
-		out.println("Unable To Display image");
-		out.println("Image Display Error=" + e.getMessage());
+		out.println("이미지가 없습니다..TAT");
+		out.println("화면 이미지 에러 = " + e.getMessage());
 		return;
-	} 																																																																																																																				%>
+	}
+	%>
 
 </body>
 </html>

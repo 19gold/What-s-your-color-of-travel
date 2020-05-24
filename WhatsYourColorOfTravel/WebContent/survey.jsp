@@ -82,13 +82,13 @@
    });
 
    $(document).ready(function() {
-      var country = ["훗카이도","혼슈","시코쿠","큐수","오키나와"];
+      var country = ["홋카이도","혼슈","시코쿠","규슈","오키나와"];
 
       var people=["1","2","3","4","5명 이상"];
-      var mood=["조용한 분위기","활기찬 분위기","느긋한 분위기","독특한 분위기","독특한 분위기"];
+      var mood=["조용한_분위기","시끄러운_분위기","느긋한_분위기","독특한_분위기","독특한_분위기"];
       var nature=["산","바다","시골","도시","눈"];
       var activity=["자연","역사","문화체험","먹거리","액티비티"];
-      var character=["활발한 성격","느긋한 성격","급한 성격","온화한 성격","게으른 성격"];
+      var character=["활발한_성격","느긋한_성격","급한_성격","온화한_성격","게으른_성격"];
       var tf=[false,false,false,false,false, false];
       
       $(".select_country").click(function(e) {
@@ -174,11 +174,11 @@
 
 		<form>
 			<input type="button" class="button select_country" name="japan1"
-				value="훗카이도"onclick="change1(this)"><br /> <input type="button"
+				value="홋카이도"onclick="change1(this)"><br /> <input type="button"
 				class="button select_country" name="japan2" value="혼슈"onclick="change1(this)"><br />
 			<input type="button" class="button select_country" name="japan3"
 				value="시코쿠"onclick="change1(this)"><br /> <input type="button"
-				class="button select_country" name="japan4" value="큐수"onclick="change1(this)"><br />
+				class="button select_country" name="japan4" value="규슈"onclick="change1(this)"><br />
 			<input type="button" class="button select_country" name="japan5"
 				value="오키나와"onclick="change1(this)"><br /> <input type="button" id="submit1"
 				class="submit1" value="next" width="100">
@@ -194,12 +194,12 @@
 			width="100">
 	</div>
 	<div id="div3" class="absolute3">
-		<input type="button" class="button mood" name="slient" value="조용한 분위기"onclick="change1(this)"><br>
-		<input type="button" class="button mood" name="noisy" value="활기찬 분위기"onclick="change1(this)"><br>
+		<input type="button" class="button mood" name="slient" value="조용한_분위기"onclick="change1(this)"><br>
+		<input type="button" class="button mood" name="noisy" value="시끄러운_분위기"onclick="change1(this)"><br>
 		<input type="button" class="button mood" name="relaxed"
-			value="느긋한 분위기"onclick="change1(this)"><br> <input type="button"
-			class="button mood" name="unique" value="독특한 분위기"onclick="change1(this)"><br> <input
-			type="button" class="button mood" name="EXOTIC" value="이국적인 분위기"onclick="change1(this)"><br>
+			value="느긋한_분위기"onclick="change1(this)"><br> <input type="button"
+			class="button mood" name="unique" value="독특한_분위기"onclick="change1(this)"><br> <input
+			type="button" class="button mood" name="EXOTIC" value="이국적인_분위기"onclick="change1(this)"><br>
 		<input type="button" id="submit3" class="submit3" value="next"
 			width="100">
 	</div>
@@ -226,12 +226,12 @@
 	</div>
 	<div id="div6" class="absolute6">
 		<input type="button" class="button character" name="activitely"
-			value="활발한 성격"onclick="change1(this)"><br /> <input type="button"
-			class="button character" name="relax" value="느긋한 성격" onclick="change1(this)"/><br /> <input
-			type="button" class="button character" name="hottemper" value="급한 성격" onclick="change1(this)"/><br />
+			value="활발한_성격"onclick="change1(this)"><br /> <input type="button"
+			class="button character" name="relax" value="느긋한_성격" onclick="change1(this)"/><br /> <input
+			type="button" class="button character" name="hottemper" value="급한_성격" onclick="change1(this)"/><br />
 		<input type="button" class="button character" name="gentle"
-			value="온화한 성격" onclick="change1(this)"/><br /> <input type="button" class="button character"
-			name="lazy" value="게으른 성격"onclick="change1(this)" /><br /> <input type="button" id="submit6"
+			value="온화한_성격" onclick="change1(this)"/><br /> <input type="button" class="button character"
+			name="lazy" value="게으른_성격"onclick="change1(this)" /><br /> <input type="button" id="submit6"
 			class="submit6" value="next" width="100" />
 	</div>
 	<div id="div7" class="absolute7">
