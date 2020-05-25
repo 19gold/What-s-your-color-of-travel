@@ -91,9 +91,10 @@ body{
 }
 
 img{
-	position:absolute;
 	float:left;
-	left : 15%;
+}
+table{
+	position:absolute;
 }
 div{
 	left:15px;

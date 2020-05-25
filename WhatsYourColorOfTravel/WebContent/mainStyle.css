@@ -6,6 +6,7 @@ body {
 	background-image: url('img/main.png');
 	background-repeat: no-repeat;
 	background-position:  top;
+    background-attachment: fixed;
 	overflow: hidden x;
 	margin: 0 auto;
 }
@@ -14,6 +15,8 @@ body {
 	position: absolute;
 	bottom: 0px;
 	margin-bottom: -525px;
+	padding-left:0;
+	padding-right:0;
 }
 img{
 	margin-left:20px;
