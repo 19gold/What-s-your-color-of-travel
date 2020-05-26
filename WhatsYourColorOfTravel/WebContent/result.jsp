@@ -6,6 +6,7 @@
 <%@page import="DB.DBvar"%>
 <%@page import="DB.DBlist"%>
 <%@page import="java.util.*"%>
+<%@page import="java.awt.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -183,6 +184,23 @@
 		System.out.println(selectedActivity);//문화체험
 		System.out.println(selectedCharacter);//느긋한 - > DB에서 사용 안하고 프론트 쪽에서 색 표현시 사용
 		System.out.println("jsp에서 값 받기 성공");
+		
+			switch(temp[5]) {
+		    case "0": %> <img src="test/0.jpg" width="500" height="300"><% 
+		         break;
+		    case "1": %> <img src="test/1.jpg" width="500" height="300"><% 
+		         break;
+		    case "2": %> <img src="test/2.jpg" width="500" height="300"><% 
+			         break;
+		    case "3": %> <img src="test/3.jpg" width="500" height="300"><% 
+			         break;
+		    case "4": %> <img src="test/4.jpg" width="500" height="300"><% 
+			         break;
+		    default:  %> <img src="test/0.jpg" width="500" height="300"><% 
+		         break;
+		}
+		
+		
 		Blob image = null;
 		Connection con = null;
 		byte[] imgData = null;
@@ -209,7 +227,8 @@
 				image = rs.getBlob(3);
 				imgData = image.getBytes(1, (int) image.length());
 				String encoded = Base64.getEncoder().encodeToString(imgData);
-	%>
+		
+			%>
 
 	<table style="left:<%=picleft%>%;">
 		<tr>
