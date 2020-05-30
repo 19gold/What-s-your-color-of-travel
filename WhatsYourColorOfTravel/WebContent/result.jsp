@@ -51,65 +51,7 @@
 	System.out.println(selectedCharacter);//느긋한 - > DB에서 사용 안하고 프론트 쪽에서 색 표현시 사용
 	System.out.println("jsp에서 값 받기 성공");%>
 
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+<div class = "colorimg">
 	<% 
 	//분위기별 결과 이미지 
 		switch(temp[2]) {
@@ -159,9 +101,10 @@
 	         break;
 	}
 		%>
+		</div>
 	<div id="explain" class="relative1">
 		<button id="btn1">
-			<img src="img\result_submit.png">
+		<img src="img\result_submit.png" class = "ic">
 			<div>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View reviews of
 				people who are<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;similar
@@ -177,34 +120,7 @@
 	<br>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<div class = "resulttable">
 	<%
 	Blob image = null;
 	Connection con = null;
@@ -240,12 +156,12 @@
 			tag2_db=rs.getString(5);
 			tag3_db=rs.getString(6);
 	%>
-	<table>
+	<table class = "hptable">
 		<tr class = "local" style = "text-align : left;">
 			<td># <%=country_db%></td>
 		</tr>
 		<tr>
-			<td><img id="photoImage"
+			<td><img id="photoImage"class = "photoImage"
 				src="data:image/png;base64, <%=encoded%>"/>
 			<td>
 			
@@ -266,6 +182,6 @@
 			return;
 		}
 	%>
-
+</div>
 </body>
 </html>
