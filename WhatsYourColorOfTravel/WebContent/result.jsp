@@ -32,6 +32,13 @@
 	String result = request.getParameter("result");
 	System.out.println("result -.>" + result);
 	String[] temp = result.split(",");
+	if(temp[0].equals("0")){
+		temp[2]="1";
+		temp[3]="4";
+		temp[4]="2";
+		temp[5]="1";
+	}
+	
 	//System.out.println("#####1");
 	String selectedCountry = country[Integer.parseInt(temp[0])];//지역 섬
 	//System.out.println("#####2");
@@ -44,6 +51,7 @@
 	String selectedCharacter = character[Integer.parseInt(temp[5])];//성격
 	System.out.println("temp[5] : "+temp[5]);
 	//System.out.println("#####6");
+	
 	System.out.println(selectedCountry);//혼슈
 	System.out.println(selectedMood);//느긋한
 	System.out.println(selectedNature);//시골
