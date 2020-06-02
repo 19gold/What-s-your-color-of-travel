@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+input[type=textbox] {
+  width: 80%;
+  height: 80px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+textarea {
+  width: 80%;
+  height: 500px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  width: 30%;
+  height: 80px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+input[type=textbox]:focus {
+  border: 1px solid #ff0000;
+}
+
+textarea:focus {
+  border: 1px solid #ff0000;
+}
