@@ -9,14 +9,13 @@
 </head>
 <body>
 <center>
-<br><br><br><br><br>
+<br><br>
 	<form>
+	<input type = "textbox" placeholder="제목"><br>
 	<div id=img>
 		<input type="file" id="real-input" class="image_inputType_file" accept="img/*" required multiple>
-		<button class="browse-btn">사진업로드</button>
 	</div>
-	<input type = "textbox" placeholder="제목"><br><br>
-	<textarea placeholder="내용" cols = "100" rows = "10"></textarea><br><br>
+	<textarea placeholder="내용" cols = "100" rows = "15"style="resize: none;"></textarea><br><br>
 	<input type = "submit" value = "확인">
 	</form>
 </center>

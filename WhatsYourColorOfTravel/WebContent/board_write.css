@@ -1,5 +1,12 @@
 @charset "utf-8";
-
+body{
+	width:100%;
+	height:100%;
+	background-color:#fcf8f5;
+	background-repeat:no-repeat; 
+	background-position: center top;
+	overflow:hidden;
+}
 input[type=textbox] {
   width: 80%;
   height: 80px;
@@ -14,7 +21,7 @@ input[type=textbox] {
 
 textarea {
   width: 80%;
-  height: 500px;
+  height: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -26,7 +33,7 @@ textarea {
 
 input[type=submit] {
   width: 30%;
-  height: 80px;
+  height: 7vw;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -34,18 +41,27 @@ input[type=submit] {
   border-radius: 100px;
   box-sizing: border-box;
   font-size: 20px;
+	box-shadow: 0px 0px 5px #7e7e7e;
+	font-weight:555;
+	background-color: #d92c45; color : white;/*border : none;*/
 }
+button{
+	width: 30%;
+  height: 7vw;
+	margin:4vh 0 0 0;
+} 
 
 #img{
 width: 80%;
-  height: 50px;
-  padding: 12px 20px;
+  height: 6vw;
+  line-height: 6vw;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 20px;
+  background-color : white;
 }
 
 button {
@@ -57,7 +73,6 @@ button {
   box-sizing: border-box;
   font-size: 20px;
 }
-
 input[type=textbox]:focus {
   border: 1px solid #ff0000;
 }
