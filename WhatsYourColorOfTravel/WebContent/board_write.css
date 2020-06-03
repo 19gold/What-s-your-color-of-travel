@@ -2,76 +2,70 @@
 body{
 	width:100%;
 	height:100%;
-	background-color:#fcf8f5;
+	/*background-color:#fcf8f5;*/
+	margin : 0 auto;
+	background-image: url('img/board.png'); 
 	background-repeat:no-repeat; 
+	background-size : cover;
+	background-attachment : fixed;
 	background-position: center top;
 	overflow:hidden;
 }
-input[type=textbox] {
-  width: 80%;
-  height: 80px;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 20px;
+.contain{
+	top : 200px;
+	width : 692px;
+	height: 450px;
+	position:relative;
+	text-align : left;
+}
+html{width:100%;
+	height:100%;
+	margin : 0 auto;
+	}
+.title {
+	width : 24vw;
+    height: 4vh;
+    padding: 12px 20px;
+    background-color:#e8e8e8;
+    margin: 5px 0;
+    display: inline-block;
+    border:0;
+    border-radius: 40px;
+    box-sizing: border-box;
+    border-radius: 30px;
+	box-shadow: 0 1px 4px 0px #c8c8c8 inset;
+	font-size : 12px;
+    
 }
 
 textarea {
-  width: 80%;
-  height: 80%;
+	background-color:#e8e8e8;
+	width : 692px;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 5px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 20px;
+  cbox-sizing: border-box;
+  border-radius: 40px;
+    box-sizing: border-box;
+    border-radius: 20px;
+	box-shadow: 0 1px 4px 0px #c8c8c8 inset;
+  font-size: 14px;
 }
 
 input[type=submit] {
-  width: 30%;
-  height: 7vw;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
+  width: 173PX;
+  height: 50px;
+  margin: 7px auto;
+  display:block;
+  border: 0;
   border-radius: 100px;
   box-sizing: border-box;
-  font-size: 20px;
-	box-shadow: 0px 0px 5px #7e7e7e;
+  font-size: 14px;
+	box-shadow: 0px 0px 2px #7e7e7e;
 	font-weight:555;
-	background-color: #d92c45; color : white;/*border : none;*/
-}
-button{
-	width: 30%;
-  height: 7vw;
-	margin:4vh 0 0 0;
-} 
-
-#img{
-width: 80%;
-  height: 6vw;
-  line-height: 6vw;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 20px;
-  background-color : white;
-}
-
-button {
-  width: 30%;
-  height: 40px;
-  margin : -30px 0px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 20px;
+	background-color: #d92c45; color : white;
 }
 input[type=textbox]:focus {
   border: 1px solid #ff0000;
@@ -79,4 +73,57 @@ input[type=textbox]:focus {
 
 textarea:focus {
   border: 1px solid #ff0000;
+}
+
+
+
+.filename{
+	width : 42vw;
+    height: 4vh;
+    background-color:#e8e8e8;
+    line-height : 4vh;
+    margin: 5px 0;
+    display: inline-block;
+    border:0;
+    color : grey;
+    border-radius: 40px;
+    box-sizing: border-box;
+    border-radius: 30px;
+	box-shadow: 0 1px 4px 0px #c8c8c8 inset;
+	padding-right:20px;
+	font-size : 12px;
+	
+	
+	
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+	
+}
+.box-file-input{
+}
+.box-file-input label{
+    height: 4vh;
+    margin: 5px 0;
+    border-radius: 50px;
+    display:inline-block;
+    background-color: #d92c45; 
+    color : white;
+    padding:0px 15px;
+    cursor:pointer;
+    float:right;
+    line-height:4vh;
+}
+
+.box-file-input label:after{
+    content:"+";
+}
+
+.box-file-input .file-input{
+    display:none;
+}
+
+.box-file-input .filename{
+    display:inline-block;
+    padding-left:20px;
 }
