@@ -12,16 +12,16 @@
 <body>
 	<center>
 		<br> <br>
-		<form>
+		<form action="board_writeDB.jsp" method="POST">
 			<div class="contain">
-				<input type="text" class="title" placeholder="Á¦¸ñ ÀÔ·Â"><br>
+				<input type="text" class="title" placeholder="ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½"><br>
 				<div class="box-file-input">
-					<span class="filename">ÆÄÀÏÀ» ¼±ÅÃÇØÁÖ¼¼¿ä.</span><label><input type="file"
+					<span class="filename">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.</span><label><input type="file"
 						name="img" class="file-input"
 						accept="image/*"></label>
 				</div>
-				<textarea placeholder="³»¿ë" cols="100" rows="16"
-					style="resize: none;"></textarea>
+				<textarea placeholder="ï¿½ï¿½ï¿½ï¿½" cols="100" rows="16"
+					style="resize: none;" class="oneIntro"></textarea>
 				<br>
 				<br> <input type="submit" value="UPLOAD">
 				 
@@ -44,7 +44,7 @@ $(document).on("change", ".file-input", function(){
     $filename = $(this).val();
 
     if($filename == "")
-        $filename = "ÆÄÀÏÀ» ¼±ÅÃÇØÁÖ¼¼¿ä.";
+        $filename = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.";
 
     $(".filename").text($filename);
 
