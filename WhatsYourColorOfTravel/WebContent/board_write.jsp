@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,13 +14,13 @@
 		<br> <br>
 		<form action="board_writeDB.jsp" method="POST">
 			<div class="contain">
-				<input type="text" class="title" placeholder="���� �Է�"><br>
+				<input type="text" class="title" placeholder="제목"><br>
 				<div class="box-file-input">
-					<span class="filename">������ �������ּ���.</span><label><input type="file"
+					<span class="filename">파일을 선택해주세요.</span><label><input type="file"
 						name="img" class="file-input"
 						accept="image/*"></label>
 				</div>
-				<textarea placeholder="����" cols="100" rows="16"
+				<textarea placeholder="내용" cols="100" rows="16"
 					style="resize: none;" class="oneIntro"></textarea>
 				<br>
 				<br> <input type="submit" value="UPLOAD">
@@ -44,7 +44,7 @@ $(document).on("change", ".file-input", function(){
     $filename = $(this).val();
 
     if($filename == "")
-        $filename = "������ �������ּ���.";
+        $filename = "占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쌍쇽옙占쏙옙.";
 
     $(".filename").text($filename);
 
