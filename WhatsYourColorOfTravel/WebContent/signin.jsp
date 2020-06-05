@@ -39,7 +39,7 @@
 		System.out.println("psw -->"+passwd);
 		msg="로그인 성공";
 		System.out.println("Login success");
-		response.sendRedirect("survey.jsp");//여기 바꾸장
+		response.sendRedirect("menu_mem.jsp");//여기 바꾸장
 	}else {	
 		msg="로그인 실패";
 		System.out.println("Login failed");
