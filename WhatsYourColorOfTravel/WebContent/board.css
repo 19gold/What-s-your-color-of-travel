@@ -15,7 +15,9 @@ body {
   background: #555;
   color: #f1f1f1;
 }
-
+.writeclick{
+	float : right;
+}
 .content {
   padding: 16px;
 }
@@ -31,4 +33,9 @@ body {
 }
 .contenttbl{
 	margin : 0 auto;
+	font-size : 18px;
+}
+.loc{
+	font-size : 14px;
+	color : blue;
 }
