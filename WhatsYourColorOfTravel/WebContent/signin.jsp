@@ -39,6 +39,9 @@
 		System.out.println("psw -->"+passwd);
 		msg="로그인 성공";
 		System.out.println("Login success");
+		//세션 저장
+		session.setAttribute("id", id);   
+		
 		response.sendRedirect("menu_mem.jsp");//여기 바꾸장
 	}else {	
 		msg="로그인 실패";
