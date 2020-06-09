@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="viewReview.css?var=1" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -87,5 +88,33 @@
 			return;
 		}
 	%>
+	
+		<div id = "cardbox">
+		<image id = "dash" src="img/review_dash.png"/>	
+		<image id = "person" src="img/review_person.png"/>
+		<image id = "id" src="img/review_id.png"/>
+		<image id = "like" src="img/review_like.png"/>
+	</div>
+	
+	<div id = "cardbox2">
+		<image id = "dash" src="img/review_dash.png"/>	
+		<image id = "person" src="img/review_person.png"/>
+		<image id = "id" src="img/review_id.png"/>
+		<image id = "like" src="img/review_like.png"/>
+	</div>
+	
+	<div id = "cardbox3">
+		<image id = "dash" src="img/review_dash.png"/>	
+		<image id = "person" src="img/review_person.png"/>
+		<image id = "id" src="img/review_id.png"/>
+		<image id = "like" src="img/review_like.png"/>
+	</div>
+	
+	<div id = "cardbox4">
+		<image id = "dash" src="img/review_dash.png"/>	
+		<image id = "person" src="img/review_person.png"/>
+		<image id = "id" src="img/review_id.png"/>
+		<image id = "like" src="img/review_like.png"/>
+	</div>
 </body>
 </html>

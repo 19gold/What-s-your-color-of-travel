@@ -1,0 +1,79 @@
+@charset "EUC-KR";
+
+body {
+	background-image: url('img/review.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#cardbox{
+	background-color: #fcfbfb;
+	width: 80%;
+	height: 40%;
+	border-radius: 40px;
+	
+	position: absolute;
+	left: 10%;
+	top:40%;
+	
+}
+
+#cardbox2{
+	background-color: #fcfbfb;
+	width: 80%;
+	height: 40%;
+	border-radius: 40px;
+	
+	position: absolute;
+	left: 10%;
+	top:85%;
+}
+
+#cardbox3{
+	background-color: #fcfbfb;
+	width: 80%;
+	height: 40%;
+	border-radius: 40px;
+	
+	position: absolute;
+	left: 10%;
+	top:130%;
+	
+}
+
+#cardbox4{
+	background-color: #fcfbfb;
+	width: 80%;
+	height: 40%;
+	border-radius: 40px;
+	
+	position: absolute;
+	left: 10%;
+	top:175%;
+	
+}
+
+
+#dash{
+	position: absolute;
+	left: -6%;
+	top: -25%;
+}
+
+#person{
+	position: absolute;
+	left: 0%;
+	top: -25%;
+}
+
+#id{
+	position: absolute;
+	left: 5.5%;
+	top: 25%;
+}
+
+#like{
+	position: absolute;
+	left: 9.5%;
+	top: 58%;
+}
