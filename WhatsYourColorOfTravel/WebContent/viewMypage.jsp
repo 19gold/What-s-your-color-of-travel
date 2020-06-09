@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="viewMypage.css?var=1" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -87,5 +88,26 @@
 			return;
 		}
 	%>
+	
+		<div id = "cardbox">
+		<img id = "img1" src="img/기후현.JPG"/>	
+		<br>
+		<div id="text">어쩌구 저쩌구</div>
+	</div>
+	
+	<div id = "cardbox2">
+		<img id = "img1" src="img/기후현.JPG"/>	
+		<div id="text">어쩌구 저쩌구</div>
+	</div>
+			
+	<div id = "cardbox3">
+		<img id = "img1" src="img/기후현.JPG"/>	
+		<div id="text">어쩌구 저쩌구</div>
+	</div>		
+
+	<div id = "cardbox4">
+		<img id = "img1" src="img/기후현.JPG"/>	
+		<div id="text">어쩌구 저쩌구</div>
+	</div>
 </body>
 </html>

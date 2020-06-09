@@ -1,0 +1,64 @@
+@charset "EUC-KR";
+
+body {
+	background-color: #fcfbfb;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#cardbox{
+	background-color: #ffffff;
+	width: 40%;
+	height: 50%;
+	border-radius: 40px;
+	
+	position: absolute;
+	left: 7%;
+	top:30%
+}
+
+#cardbox2{
+	background-color: #ffffff;
+	width: 40%;
+	height: 50%;
+	border-radius: 40px;
+	
+	position: absolute;
+	left: 53%;
+	top:30%;
+}
+
+#cardbox3{
+	background-color: #ffffff;
+	width: 40%;
+	height: 50%;
+	border-radius: 40px;
+	
+	position: absolute;
+	left: 7%;
+	top: 90%
+}
+
+#cardbox4{
+	background-color: #ffffff;
+	width: 40%;
+	height: 50%;
+	border-radius: 40px;
+	
+	position: absolute;
+	left: 53%;
+	top:90%;
+}
+
+#text{
+	position: absolute;
+	left: 40%;
+	top:80%;
+}
+
+#img1{
+	position: absolute;
+	left: 20%;
+	top:10%;
+	
+}
