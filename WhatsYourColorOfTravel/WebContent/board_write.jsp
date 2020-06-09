@@ -35,7 +35,7 @@ id = (String)session.getAttribute("id");//세션 값 받음
 		<form action="board_writeDB.jsp" method="POST">
 			<div class="contain">
 				<input type="text" class="title" placeholder="제목" name="title"><br>
-				<input type="text" class="local" placeholder="다녀온 지역" name="local"><br>
+				<input type="text" class=]"local" placeholder="다녀온 지역" name="local"><br>
 				<div class="box-file-input">
 					<span class="filename">파일을 선택해주세요.</span><label><input
 						type="file" name="img" class="file-input" accept="image/*"></label>
@@ -48,7 +48,7 @@ id = (String)session.getAttribute("id");//세션 값 받음
         			<b style="display:none;" class="OkOrNot">게시판에 공개</b>
 					
 					<label class="switch">
-               		<input type="checkbox" id="OkNotcheck" checked>
+               		<input type="checkbox" id="OkNotcheck" name ="OkNotcheck">
                 	<span class="switchSlider round" ></span>
             		</label>
             		

@@ -20,13 +20,17 @@
 	String local = request.getParameter("local");
 	String oneIntro = request.getParameter("oneIntro");
 	String img = request.getParameter("img");
-	String truefalse = request.getParameter("input_check");	
+	String truefalse = request.getParameter("OkNotcheck");	
+	//String publicPrivate = request.getParameter("publicPrivate");
+	//System.out.println("publicPrivate : "+publicPrivate);
 	boolean truefalseCheck = false;
+	System.out.println("truefalse : "+truefalse);
 	System.out.println("title : "+title);
 	System.out.println("local : "+local);
 	
-	if(truefalse==null){
+	if(truefalse!=null){
 		truefalseCheck=true;
+		System.out.println("truefalseCheck : "+truefalseCheck);
 	}
 	
 	try {
