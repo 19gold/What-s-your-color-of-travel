@@ -9,13 +9,11 @@
 <%@page import="java.awt.*"%>
 <%
 	request.setCharacterEncoding("UTF-8");
-
 	databases databases = new databases();
 	DBvar dv = new DBvar();
 	DBlist dl = new DBlist();
 	Connection con = null;
 	Statement stmt = null;
-
 	String id=null;
 	id = (String)session.getAttribute("id");//세션 값 받음
 	String title = request.getParameter("title");
@@ -26,28 +24,19 @@
 	boolean truefalseCheck = false;
 	System.out.println("title : "+title);
 	System.out.println("local : "+local);
-	if(truefalse.equals("on")){
+	
+	if(truefalse==null){
 		truefalseCheck=true;
 	}
-	/*else{ 아니 여기 시발 왜 오류나?
-			
-		truefalseCheck=false;
-	}*/
 	
 	try {
-
 		con = databases.getCon();//DB연동하기
 		System.out.println("board_writeDb에서 db연동 확인");
 		stmt = con.createStatement();
-
-
 		File imgfile = new File(img);
-
 		FileInputStream fin = new FileInputStream(imgfile);
-
 		String sql = "INSERT INTO reviews (id, area, title,image,oneIntro,truefalse) VALUES(?,?,?,?,?,?);";
 		PreparedStatement pre = con.prepareStatement(sql);
-	//insert into reviews (id, area,title, image, oneIntro, check ) VALUES (?,?,?,?,?,?)
 		System.out.println("sql : "+sql);
 		
 		pre.setString(1,id);//id저장
@@ -56,7 +45,6 @@
 		pre.setBinaryStream(4, fin, (int) imgfile.length());//Stream형의 파일 업로드
 		pre.setString(5, oneIntro);
 		pre.setBoolean(6,truefalseCheck);
-
 		pre.executeUpdate();
 		System.out.println("Inserting Successfully!");
 		

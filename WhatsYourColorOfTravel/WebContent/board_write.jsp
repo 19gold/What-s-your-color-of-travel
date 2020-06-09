@@ -16,6 +16,7 @@
 <body>
 
 	<%
+	
 //세션 처리
 String id=null;
 id = (String)session.getAttribute("id");//세션 값 받음
@@ -41,34 +42,32 @@ id = (String)session.getAttribute("id");//세션 값 받음
 				</div>
 				<textarea placeholder="내용" cols="100" rows="16"
 					style="resize: none;" class="oneIntro" name="oneIntro"></textarea>
-				<br> <br> <input type="checkbox" class="x"
-					name="input_check" checked="checked" /><b></b> <br> <br> <input
+				<br> <br> 
+					<!-- 공개 비공개 체크 -->
+					<b class="OkOrNot">게시판에 공개 안함</b>
+        			<b style="display:none;" class="OkOrNot">게시판에 공개</b>
+					
+					<label class="switch">
+               		<input type="checkbox" id="OkNotcheck" checked>
+                	<span class="switchSlider round" ></span>
+            		</label>
+            		
+            		<br><br>
+					 <input
 					type="submit" value="UPLOAD">
 
 			</div>
 		</form>
 	</center>
 	<script>
-$(function(){
-	if($('input').is(":checked")==true){
-		$('b').text('게시판에 공개');
-		
-	}else{
-		$('b').text('게시판에 비공개');
-	}
-});
-</script>
 	
-	<script>
-	const browseBtn = document.querySelector('.browse-btn');
-	const realInput = document.querySelector('#real-input');
-
-
-	browseBtn.addEventListener('click',()=>{
-		realInput.click();
+	//공개 비공개 체크
+	$("#OkNotcheck").click(function () {
+	    $(".OkOrNot").toggle();
 	});
 
 
+	
 	$(document).on("change", ".file-input", function(){
 	 
 	    $filename = $(this).val();
