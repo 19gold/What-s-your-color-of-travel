@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>viewMapage.jsp</h1>
+<h1>viewReview.jsp</h1>
 <%
 
 	request.setCharacterEncoding("UTF-8");
@@ -50,7 +50,7 @@
 		stmt = con.createStatement();
 		System.out.println("stmt줄 실행");
 		
-		String query = "SELECT title, area, image, oneIntro FROM reviews WHERE truefalse = 1";
+		String query = "SELECT title, area, image, oneIntro FROM reviews WHERE truefalse=1";
 		System.out.println(query);
 		
 		rs = stmt.executeQuery(query);
@@ -67,16 +67,19 @@
 	
 	<table>
 		<tr>
-		<td>글쓸 때 제목 : <%=title %></td>
+		<td><h4>글쓸 때 제목 :</h4> <%=title %></td>
 		</tr>
 		<tr>
-		<td>글쓸 때 지역<%=area %></td>
+		<td><h4>글쓸 때 지역</h4><%=area %></td>
 		</tr>
 		<tr>
 		<td><img src="data:image/png;base64, <%=encoded %>"/></td>
 		</tr>
 		<tr>
-		<td>글쓸 때 후기:<%=oneIntro %></td>
+		<td><h4>글쓸 때 후기:</h4><%=oneIntro %></td>
+		</tr>
+		<tr>
+		<td><h4>해당 아이디: </h4><%=id %></td>
 		</tr>
 	</table>
 	<%

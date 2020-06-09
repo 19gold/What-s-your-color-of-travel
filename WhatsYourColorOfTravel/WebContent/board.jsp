@@ -8,6 +8,13 @@
 
 <link href="board.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+    function link(){
+        location.href = "board_write.jsp";
+    }
+</script>
+
+
 </head>
 <body>
 <div class="top">
@@ -17,7 +24,7 @@
   <form>
   <input type = "text" name = "search" placeholder = "검색"class = "search">
   <button value = "검색" class = "searchclick">검색</button>
-  <button value = "글쓰기" class = "writeclick" onclick = "location.href = 'board_write.jsp'">글쓰기</button>
+  <button value = "글쓰기" class = "writeclick" onclick = "link(); return false;">글쓰기</button>
   </form>
 </div>
 <div class="content">
