@@ -1,9 +1,15 @@
 @charset "EUC-KR";
 
 body {
-	background-image: url('img/review.png');
-	background-repeat: no-repeat;
-	background-size: 100%;
+	    background-color: #fcfbfb;
+    background-image: url(img/mypagebg.png);
+    background-repeat: no-repeat;
+    /* background-size: 100%; */
+    width: 100%;
+    height: 100%;
+    background-position: center top;
+    overflow: hidden;
+    background-attachment: fixed;
 }
 
 #cardbox{

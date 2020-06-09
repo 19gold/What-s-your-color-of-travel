@@ -91,33 +91,39 @@
 			return;
 		}
 	%>
-	
-		<div id = "cardbox">
-		<image id = "dash" src="img/review_dash.png"/>	
-		<image id = "person" src="img/review_person.png"/>
-		<image id = "id" src="img/review_id.png"/>
-		<image id = "like" src="img/review_like.png"/>
+
+	<div id="cardbox">
+		<img id="dash" src="img/review_dash.png" /> 
+		<img id="person"src="img/review_person.png" />
+		<img id="id" src="img/review_id.png" />
+		<img id="like" src="img/review_like.png" />
 	</div>
-	
+	<div id="cardbox" class = "box">
+		<img id="dash" src="img/review_dash.png" /> 
+		<img id="person"src="img/review_person.png" />
+		<img id="id" src="img/review_id.png" />
+		<img id="like" src="img/review_like.png" />
+	</div>
+
 	<div id = "cardbox2">
-		<image id = "dash" src="img/review_dash.png"/>	
-		<image id = "person" src="img/review_person.png"/>
-		<image id = "id" src="img/review_id.png"/>
-		<image id = "like" src="img/review_like.png"/>
+		<img id = "dash" src="img/review_dash.png"/>	
+		<img id = "person" src="img/review_person.png"/>
+		<img id = "id" src="img/review_id.png"/>
+		<img id = "like" src="img/review_like.png"/>
 	</div>
 	
 	<div id = "cardbox3">
-		<image id = "dash" src="img/review_dash.png"/>	
-		<image id = "person" src="img/review_person.png"/>
-		<image id = "id" src="img/review_id.png"/>
-		<image id = "like" src="img/review_like.png"/>
+		<img id = "dash" src="img/review_dash.png"/>	
+		<img id = "person" src="img/review_person.png"/>
+		<img id = "id" src="img/review_id.png"/>
+		<img id = "like" src="img/review_like.png"/>
 	</div>
 	
 	<div id = "cardbox4">
-		<image id = "dash" src="img/review_dash.png"/>	
-		<image id = "person" src="img/review_person.png"/>
-		<image id = "id" src="img/review_id.png"/>
-		<image id = "like" src="img/review_like.png"/>
+		<img id = "dash" src="img/review_dash.png"/>	
+		<img id = "person" src="img/review_person.png"/>
+		<img id = "id" src="img/review_id.png"/>
+		<img id = "like" src="img/review_like.png"/>
 	</div>
 </body>
 </html>

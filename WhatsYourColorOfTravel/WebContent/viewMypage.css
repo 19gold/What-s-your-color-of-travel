@@ -1,64 +1,126 @@
 @charset "EUC-KR";
 
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
 body {
 	background-color: #fcfbfb;
+	background-image: url(img/mypagebg.png);
 	background-repeat: no-repeat;
-	background-size: 100%;
+	/* background-size: 100%; */
+	width: 100%;
+	height: 100%;
+	background-position: center top;
+	background-attachment: fixed;
+	overflow-x: hidden;
 }
 
-#cardbox{
+.addbtn {
+	font-size: xx-large;
+	border-radius: 50%;
+	width: 5vw;
+	height: 5vw;
+    line-height: 5vh;
+	border: 0;
+	color: #ffffff;
+	background-color: #d92c45;
+	float: right;
+	right: 15%;
+	margin-right: 10%;
+}
+.heartbtn {
+	font-size: x-large;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    line-height: 3vw;
+	border: 0;
+	color: rgb(141, 141, 141);
 	background-color: #ffffff;
-	width: 40%;
-	height: 50%;
-	border-radius: 40px;
-	
-	position: absolute;
-	left: 7%;
-	top:30%
 }
 
-#cardbox2{
+.titlecontainer {
+	margin-top: 5vw;
+	margin-left: 10vw;
+	position: relative;
+}
+
+.titlecontainer .title {
+	color: #d92c45;
+	font-size: xxx-large;
+}
+
+.titlecontainer .titleexplain {
+	color: rgb(141, 141, 141);
+}
+
+.idinput {
+	height: 3.5vh;
+	width: 13vw;
+	padding: 2vh 0.1vw;
+	border: none;
+	box-sizing: border-box;
+	border-radius: 20px;
+	text-align: center;
+	font-size: 1.9vw;
+	font-weight : bolder;
+}
+
+.cardcontainer {
+	height: 100%;
+}
+
+.cardleft {
+	width: 30%;
+	height: 80%;
+	position: absolute;
+	top: 10%;
+	text-align: center;
+}
+.went{
+	font-size : 14px;
+}
+.wett{
+	font-weight : bolder;
+}
+.cardright {
+	width: 65%;
+	height: 80%;
+	overflow: hidden;
+	position: absolute;
+	border-radius: 30px;
+	right: 5%;
+	top: 10%;
+}
+
+.cardcontainer .card {
+	width: 80%;
+	height: 55%;
+	background-color: #fcfbfb;
+	border-radius: 40px;
+	position: relative;
+	text-align: center;
+	float: left;
+	margin: 2vw 9.5%;
+}
+
+.card .img {
+	float: right;
+	width: 100%;
+}
+
+#text {
+	position: absolute;
+	left: 4%;
+	width: 90%;
+	border-radius: 30px;
+	padding: 1%;
+	bottom: 5%;
 	background-color: #ffffff;
-	width: 40%;
-	height: 50%;
-	border-radius: 40px;
-	
-	position: absolute;
-	left: 53%;
-	top:30%;
-}
-
-#cardbox3{
-	background-color: #ffffff;
-	width: 40%;
-	height: 50%;
-	border-radius: 40px;
-	
-	position: absolute;
-	left: 7%;
-	top: 90%
-}
-
-#cardbox4{
-	background-color: #ffffff;
-	width: 40%;
-	height: 50%;
-	border-radius: 40px;
-	
-	position: absolute;
-	left: 53%;
-	top:90%;
-}
-
-#text{
-	position: absolute;
-	left: 40%;
-	top:80%;
-}
-
-#img1{
-	position: absolute;
-	left: 20%;
-	top:10%;
-	
+	opacity: 70%;
+	color: black;
+	font-weight: bolder;
 }
