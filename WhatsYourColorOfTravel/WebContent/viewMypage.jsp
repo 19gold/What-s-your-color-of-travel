@@ -24,7 +24,9 @@
 	</div>
 	<a href="board_write.jsp"><input type="button" value="+"
 		class="addbtn"></a>
-	<%
+
+	<div class="cardcontainer">
+		<%
 		request.setCharacterEncoding("UTF-8");
 
 		Connection con = null;
@@ -42,11 +44,11 @@
 		id = (String) session.getAttribute("id");//세션 값 받음
 		if (id == null || id.equals("")) {
 	%>
-	<script>
+		<script>
 		alert('로그인을 해주세요.');
 		location.replace("member.jsp");
 	</script>
-	<%
+		<%
 		}
 
 		try {
@@ -72,43 +74,68 @@
 				///////////////////////////////////////////////
 	%>
 
-	<table>
-		<tr>
-			<td>글쓸 때 제목 : <%=title%></td>
-		</tr>
-		<tr>
-			<td>글쓸 때 지역<%=area%></td>
-		</tr>
-		<tr>
-			<td><img src="data:image/png;base64, <%=encoded%>" /></td>
-		</tr>
-		<tr>
-			<td>글쓸 때 후기:<%=oneIntro%></td>
-		</tr>
-	</table>
-	<%
-		}
-		} catch (Exception e) {
-			out.println("이미지가 없습니다..TAT");
-			out.println("화면 이미지 에러 = " + e.getMessage());
-			return;
-		}
-	%>
-	<div class="cardcontainer">
 		<div id="cardbox" class="card">
 			<div class="cardleft">
-				<input type="text" class="idinput" disabled />
+				<input type="text" class="idinput" value="<%=id%>" disabled>
 				<!-- 아이디 나오는 칸 -->
-				<br>
-				<input type="button" value="♥" class="heartbtn" onclick = "this.style.color = 'red'"> <br>
-				<div class="went">went to<span class = "wentt"><%= %></span></div>
+				<br> <input type="button" value="♥" class="heartbtn"
+					onclick="this.style.color = '#d92c45';"> <br>
+				<div class="went">
+					went to <span class="wentt"><%=area%></span>
+				</div>
 
 			</div>
 			<div class="cardright">
-				<img id="img1" src="img/기후현.JPG" class="img" /> <br>
-				<div id="text">제목</div>
+				<img src="data:image/png;base64, <%=encoded%>" id="img1" class="img" />
+				<br>
+				<div id="text"
+					onclick="document.getElementById('id01').style.display='block'"
+					style="width: auto;"><%=title%></div>
 			</div>
 		</div>
+
+	<div id="id01" class="modal">
+
+		<table id="tablecolor">
+			<tr>
+				<td>글쓸 때 제목 : <%=title%></td>
+			</tr>
+			<tr>
+				<td>글쓸 때 지역<%=area%></td>
+			</tr>
+			<tr>
+				<td><img src="data:image/png;base64, <%=encoded%>" /></td>
+			</tr>
+			<tr>
+				<td>글쓸 때 후기:<%=oneIntro%></td>
+			</tr>
+		</table>
 	</div>
+		<%
+			}
+			} catch (Exception e) {
+				out.println("이미지가 없습니다..TAT");
+				out.println("화면 이미지 에러 = " + e.getMessage());
+				return;
+			}
+		%>
+
+
+
+	</div>
+
+
+
+	<script>
+		// Get the modal
+		var modal = document.getElementById('id01');
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
 </body>
 </html>

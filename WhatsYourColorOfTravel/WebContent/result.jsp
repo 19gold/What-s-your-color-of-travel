@@ -142,7 +142,7 @@
 				<td class="td tdl">
 					<div id="explain" class="relative1">
 						<button id="btn1">
-							<img src="img\result_submit.png" class="ic">
+							<img src="img\result_submit.png" class="ic" onclick="location.href='viewMypage.jsp'">
 							<div class = "exp">
 								View reviews of people who are<br>similar in travel color
 								to me !

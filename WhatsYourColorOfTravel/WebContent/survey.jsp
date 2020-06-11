@@ -234,7 +234,7 @@
 	</div>
 	<div id="div7" class="absolute7">
 		<button type="submit" id="submit7" class="submit7">Result</button>
-		
+		</div>
 		<script>
 		function change1( obj){
 			obj.style.color = '#d92c45';

@@ -63,6 +63,6 @@
 			</div>
 		</form>
 	</div>
-	<script text = "text/javascript" src="signup.js"></script>
+	<script type = "text/javascript" src="signup.js"></script>
 </body>
 </html>
