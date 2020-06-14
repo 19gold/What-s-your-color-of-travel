@@ -9,6 +9,7 @@ body {
 	background-position: center top;
 	background-size : contain;
 	background-color: #fcf8f5;
+	margin:0 auto;
 }
 
 /*설문 시작 버튼*/
