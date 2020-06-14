@@ -27,20 +27,24 @@
 	crossorigin="anonymous"></script>
 
 <title>Insert title here</title>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 </head>
 <body>
 	<div class="titlecontainer">
 		<h1 class="title">REVIEW</h1>
 		<div class="titleexplain">
-			It's a page that reminds you of the experiences you've traveled.<br>
-			We have collected only the reviews you wrote among all the reviews.
+			On this page, you can see the travel reviews that other people have written..<br>
+			Find out where the others have been.
 		</div>
 	</div>
-	<div class="plus" style="">
+	<div class="plus searchheader"  id="searchheader">
 		<a href="board_write.jsp"><input type="button" value="+"
 			class="addbtn"></a>
+			
+  <input type = "text" name = "search" placeholder = "지역 검색하기"class = "search">
+  <button value = "검색" class = "searchclick">검색</button>
+ 
 		<div class="menubtn">
 			<img src="img/review_menu1.png" class="menu menu4"><img
 				src="img/review_menu2.png" class="menu menu2">
@@ -96,12 +100,19 @@
 					oneIntro = rs.getString(4);
 					num = rs.getString(5);
 					System.out.println(num);
-					///////////////////////////////////////////////
 		%>
-		<div id="cardbox" class="card col-lg-5"id = "card">
+		<%String classs = ""; 
+			if (Integer.parseInt(num) % 2 == 1) {
+				classs = "hol";
+					}
+			else if(Integer.parseInt(num) % 2 == 0){
+				classs = "jjak"; 
+			}
+		%>
+		<div id="cardbox" class="card col-lg-5 <%=classs %>" id="card">
 			<div class="cardleft">
 				<img src="img/review_person.png" id="personimg" class="personimg" /><br>
-				<br> <input type="text" class="idinput" value="<%=id%>"
+				<input type="text" class="idinput" value="<%=id%>"
 					disabled>
 				<!-- 아이디 나오는 칸 -->
 				<br> <input type="button" value="♥" class="heartbtn"
@@ -124,17 +135,17 @@
 				onclick="document.getElementById('id<%=num%>').style.display='none'"
 				class="close" title="Close Modal" style="font-size: 60px;">&times;</span>
 			<table class="modaltable">
-				<tr>
-					<td>글쓸 때 제목 : <%=title%></td>
+				<tr style = "font-size : 20pt;">
+					<td>제목 <%=title%></td>
 				</tr>
-				<tr>
-					<td>글쓸 때 지역<%=area%></td>
+				<tr  style = "font-size : 20pt;">
+					<td>지역 <%=area%></td>
 				</tr>
 				<tr>
 					<td><img src="data:image/png;base64, <%=encoded%>" /></td>
 				</tr>
 				<tr>
-					<td>글쓸 때 후기:<%=oneIntro%></td>
+					<td>후기 <%=oneIntro%></td>
 				</tr>
 			</table>
 		</div>
@@ -149,18 +160,28 @@
 		%>
 	</div>
 	<script>
-
-	$('.menu2').click(function(){
-		$('.card').removeClass('col-lg-5');
-	    $('.card').addClass('col-lg-12');
-	});//col-lg-offset-2 col-lg-8
-$('.menu4').click(function(){
-	$('.card').removeClass('col-lg-12');
-    $('.card').addClass('col-lg-5');
-	});
-		
-	
+		$('.menu2').click(function() {
+			$('.card').removeClass('col-lg-5');
+			$('.card').addClass('col-lg-12');
+		});//col-lg-offset-2 col-lg-8
+		$('.menu4').click(function() {
+			$('.card').removeClass('col-lg-12');
+			$('.card').addClass('col-lg-5');
+		});
 	</script>
+<script>
+window.onscroll = function() {myFunction()};
 
+var header = document.getElementById("searchheader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
 </body>
 </html>

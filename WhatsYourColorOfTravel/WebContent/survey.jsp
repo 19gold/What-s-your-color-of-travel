@@ -242,7 +242,7 @@
 	</div>
 
 	<div id="div4" class="absolute4">
-		<div class="q4 qq">
+		<div class="q4  qq">
 			<span class="span"> <img src="img/paint_szsz.png"
 				class="paint"><br>STEP.4
 			</span><br>Select the number of people to travel with
@@ -259,8 +259,8 @@
 			id="submit4" class="submit4" value="next" width="100">
 	</div>
 	<div id="div5" class="absolute5">
-		<div class="q5 qq">
-			<span class="span"> <img src="img/paint_szsz.png"
+		<div class="q5 q6 qq">
+			<span class="span"> <img src="img/paint_szszr.png"
 				class="paint"><br>STEP.5
 			</span><br>Select a continent to travel to
 		</div>
@@ -295,9 +295,9 @@
 			class="submit6" value="next" width="100" />
 	</div>
 	<div id="div7" class="absolute7">
-<img src="img/paint_szszr.png" class="paintbtm"><br><br><span class = "thx">THANK YOU</span></span><BR>
-		<br>
-		<br><button type="submit" id="submit7" class="submit7">Result</button>
+		<img src="img/paint_szszr.png" class="paintbtm"><br> <br>
+		<span class="thx">THANK YOU</span></span><BR> <br> <br>
+		<button type="submit" id="submit7" class="submit7">Result</button>
 	</div>
 	<script>
 		function change1(obj) {
