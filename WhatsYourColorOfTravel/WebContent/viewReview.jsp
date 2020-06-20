@@ -135,17 +135,17 @@
 				onclick="document.getElementById('id<%=num%>').style.display='none'"
 				class="close" title="Close Modal" style="font-size: 60px;">&times;</span>
 			<table class="modaltable">
-				<tr style = "font-size : 20pt;">
-					<td>제목 <%=title%></td>
+				<tr class = "tilo lo">
+					<td><%=area%></td>
 				</tr>
-				<tr  style = "font-size : 20pt;">
-					<td>지역 <%=area%></td>
+				<tr class = "tilo">
+					<td><%=title%></td>
 				</tr>
 				<tr>
 					<td><img src="data:image/png;base64, <%=encoded%>" /></td>
 				</tr>
-				<tr>
-					<td>후기 <%=oneIntro%></td>
+				<tr class = "review">
+					<td><%=oneIntro%></td>
 				</tr>
 			</table>
 		</div>

@@ -186,6 +186,14 @@
 				rs = stmt.executeQuery(query);
 				//out은 jsp가 원래 가지고 있는 내장객체
 				System.out.println("rs : " + rs);
+
+				System.out.println("rs.next() : "+ rs.next());
+				if(rs.next()==false){
+					%>
+					결과가 없습니다ㅜㅜ
+
+					<%
+				}
 				while (rs.next()) {
 					country_db = rs.getString(1);
 					link_db = rs.getString(2);
