@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="menu.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>What's your color of travel</title>
 </head>
 <body>
 <div class="survey">

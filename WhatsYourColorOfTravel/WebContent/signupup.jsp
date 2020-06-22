@@ -11,7 +11,7 @@
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="signupup.css">
 <!-- <link rel="stylesheet" href="css/reset.css"> -->
-<title>회원가입</title>
+<title>What's your color of travel</title>
 </head>
 <body style="overflow: hidden;">
 	<div id="id02" class="modal">

@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>결과로 나온 이미지추출</title>
+<title>What's your color of travel</title>
 </head>
 <body>
 	<%

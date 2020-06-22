@@ -12,7 +12,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="result.css?var=1" rel="stylesheet" type="text/css">
-<title>결과창</title>
+<title>What's your color of travel</title>
 </head>
 <body style="overflow-x: hidden;">
 	<img src="img/resultcha.gif" class="resultcha">

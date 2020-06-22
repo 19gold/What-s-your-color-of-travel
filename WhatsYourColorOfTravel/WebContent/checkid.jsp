@@ -15,7 +15,7 @@
 }
 </style>
 <meta charset="EUC-KR">
-<title>id check</title>
+<title>What's your color of travel</title>
 </head>
 <body>
 

@@ -13,7 +13,7 @@
 <head>
 <meta charset="utf-8">
 
-<title>비밀번호 찾기</title>
+<title>What's your color of travel</title>
 <link href="findpw.css?after" rel="stylesheet" type="text/css">
 
 <title>PWisfounded</title>

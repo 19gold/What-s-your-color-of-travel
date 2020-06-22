@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>What's your color</title>
+<title>What's your color of travel</title>
 <link href="board_write.css?after" rel="stylesheet" type="text/css">
 <link
 	href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Open+Sans:wght@300&display=swap"

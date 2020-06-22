@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="check.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>What's your color of travel</title>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.js"></script>
 <script>

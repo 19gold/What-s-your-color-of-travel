@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="menu_mem.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>What's your color of travel</title>
 </head>
 <body>
 	<div class="contain">
@@ -17,7 +17,7 @@
 			<div class="explain_text">
 				Find your own travel style<br>through the survey!
 			</div>
-			<Button id="btn1" onclick="location.href='survey.jsp'">GO
+			<Button id="btn1" onclick="location.href='surveychange.jsp'">GO
 				SURVEY ></Button>
 		</div>
 

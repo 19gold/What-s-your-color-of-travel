@@ -5,7 +5,7 @@
 <head>
 	<link href="check.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>What's your color of travel</title>
 </head>
 <body>
 	<div align="center">

@@ -10,7 +10,7 @@
 <head profile="http://www.w3.org/2005/10/profile">
 <meta charset="UTF-8">
 <link href="viewMypage.css?var=1" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>What's your color of travel</title>
 <link rel="icon" type="image/png" href="//example.com/myicon.png">
 
 </head>

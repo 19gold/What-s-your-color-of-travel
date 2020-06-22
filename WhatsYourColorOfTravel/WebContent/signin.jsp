@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>What's your color of travel</title>
 </head>
 <body>
 	<%

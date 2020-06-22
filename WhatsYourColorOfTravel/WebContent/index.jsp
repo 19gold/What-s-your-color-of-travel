@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>What's your color</title>
+<title>What's your color of travel</title>
 <link href="mainStyle.css?after" rel="stylesheet" type="text/css">
 </head>
 

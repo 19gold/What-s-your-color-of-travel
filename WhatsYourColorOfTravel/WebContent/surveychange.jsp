@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="surveychange.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>What's your color of travel</title>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
@@ -185,7 +185,7 @@
 	<button id="btn1">Go to survey</button>
 	<!-- <div class="survey1" id="survey1"> -->
 	<div id="div1" class="absolute1">
-		<div class="q1 qq">
+		<div class="qq">
 			<span class="span"> <img src="img/paint_szsz.png"
 				class="paint"><br>STEP.1
 			</span><br>Day or Night
@@ -198,28 +198,16 @@
 		<button type="button" class="button select_daynignt select_country"
 			name="night" value="혼슈" onclick="change1(this, '053752')">밤이
 			좋은</button>
-		<br>
-		<!-- <br><INPUT TYPE = "BUTTON" class="button select_daynignt select_country" name="day" value="훗카이도" onclick="change1(this)">낮이 좋은</button><br>
-		<INPUT TYPE = "BUTTON" class="button select_daynignt select_country" name="night" value="혼슈" onclick="change1(this)">밤이 좋은</button><br>
-		 -->
-		<input type="button" id="submit1" class="submit1" value="next"
-			width="100">
+		<br> <input type="button" id="submit1" class="submit1"
+			value="next" width="100">
 
 	</div>
 	<div id="div2" class="absolute2">
-		<div class="q2 qq">
+		<div class="qq">
 			<span class="span"> <img src="img/paint_szsz.png"
 				class="paint"><br>STEP.2
 			</span><br>Select the number of people to travel with
 		</div>
-		<!-- <br> <input type="button" class="button people" name="1"
-			value="1" onclick="change1(this)"><br> <input
-			type="button" class="button people" name="2" value="2"
-			onclick="change1(this)"><br> <input type="button"
-			class="button people" name="3" value="3" onclick="change1(this)"><br>
-		<input type="button" class="button people" name="4" value="4"
-			onclick="change1(this)"><br> <input type="button"
-			class="button people" name="5" value="5명 이상" onclick="change1(this)"><br>-->
 		<br>
 		<button type="button" class="button people" name="1" value="1"
 			onclick="change1(this, 'EF3A38')">1</button>
@@ -239,19 +227,13 @@
 			value="next" width="100">
 	</div>
 	<div id="div3" class="absolute3">
-		<div class="q3 qq">
+		<div class="qq">
 			<span class="span"> <img src="img/paint_szsz.png"
 				class="paint"><br>STEP.3
 			</span><br>Choose the preferred atmosphere<br> of the place to
 			travel
 
 		</div>
-		<!-- <br> <input type="button" class="button mood" name="slient" value="조용한_분위기" onclick="change1(this)"><br>
-		 <input type="button" class="button mood" name="noisy" value="시끄러운_분위기" onclick="change1(this)"><br> 
-		 <input type="button" class="button mood" name="relaxed" value="느긋한_분위기" onclick="change1(this)"><br> 
-		 <input type="button" class="button mood" name="unique" value="독특한_분위기" onclick="change1(this)"><br> 
-		 <input type="button" class="button mood" name="EXOTIC" value="이국적인_분위기" onclick="change1(this)"><br> -->
-
 		<button type="button" class="button mood" name="slient"
 			value="조용한_분위기" onclick="change1(this, 'b1a5a3')">조용한 분위기</button>
 		<br />
@@ -271,7 +253,7 @@
 	</div>
 
 	<div id="div4" class="absolute4">
-		<div class="q4  qq">
+		<div class="qq">
 			<span class="span"> <img src="img/paint_szsz.png"
 				class="paint"><br>STEP.4
 			</span><br>Select the geography
@@ -295,7 +277,7 @@
 			width="100">
 	</div>
 	<div id="div5" class="absolute5">
-		<div class="q5 q qq">
+		<div class="qq">
 			<span class="span"> <img src="img/paint_szsz.png"
 				class="paint"><br>STEP.5
 			</span><br>Select what you want to do
@@ -319,8 +301,8 @@
 			width="100">
 	</div>
 	<div id="div6" class="absolute6">
-		<div class="q6 qq">
-			<span class="span"> <img src="img/paint_szszr.png"
+		<div class="qq">
+			<span class="span"> <img src="img/paint_szsz.png"
 				class="paint"><br>STEP.6
 			</span><br>What is your personality like?
 		</div>
@@ -348,22 +330,49 @@
 		<button type="submit" id="submit7" class="submit7">Result</button>
 	</div>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
-	var body_bgcolor = null;
-			function my_fun(obj, color){ 
-				 $(".button").animate({color : "#929292"}, "fast");
-				 $(obj).animate({color : "#"+color}, "fast");
-				 $("#body").animate({ backgroundColor: "#"+color }, "SLOW");
-				 $(obj).animate({boxShadow : "inset 0 0 10px #"+color}, "slow");
-			} body_bgcolor = my_fun; 
+		var body_bgcolor = null;
+		function my_fun(obj, color) {
+
+			
+			if (color == "ffffff" || color == "f5f5dc") {
+				$('.qq').css("color", "#d92c45");
+				$('.paint').attr("src", "img/paint_szszr.png");
+
+			} else {
+				$('.qq').css("color", "white");
+				$('.paint').attr("src", "img/paint_szsz.png");
+			}
+			$(".button").animate({
+				color : "#929292"
+			}, "fast");
+			$("#body").animate({
+				backgroundColor : "#" + color, boxShadow : "inset 0 0 10px #" + color
+			}, "SLOW");
+			/*$(obj).animate({
+				
+			}, "slow");*/
+			if (color == "ffffff" || color == "f5f5dc") {
+				color="d92c45";
+			}
+			$(obj).animate({
+				
+				color : "#" + color
+			}, "fast");
+
+		}
+		body_bgcolor = my_fun;
 		function change1(obj, color) {
 			var body = document.getElementById('body');
 			body.style.backgroundImage = "none";
-			body_bgcolor(obj,color);
+
+			body_bgcolor(obj, color);
 		}
-		$( "#submit6" ).on( "click", function() {
-			 $("#body").animate({ backgroundColor: "#fcf8f5" }, "SLOW");
+		$("#submit6").on("click", function() {
+			$("#body").animate({
+				backgroundColor : "#fcf8f5"
+			}, "SLOW");
 		});
 	</script>
 
