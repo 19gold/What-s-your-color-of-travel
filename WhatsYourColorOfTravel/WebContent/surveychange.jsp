@@ -182,6 +182,7 @@
 </script>
 </head>
 <body style="overflow-x: hidden;" id="body">
+	
 	<button id="btn1">Go to survey</button>
 	<!-- <div class="survey1" id="survey1"> -->
 	<div id="div1" class="absolute1">
@@ -335,7 +336,6 @@
 		var body_bgcolor = null;
 		function my_fun(obj, color) {
 
-			
 			if (color == "ffffff" || color == "f5f5dc") {
 				$('.qq').css("color", "#d92c45");
 				$('.paint').attr("src", "img/paint_szszr.png");
@@ -348,16 +348,17 @@
 				color : "#929292"
 			}, "fast");
 			$("#body").animate({
-				backgroundColor : "#" + color, boxShadow : "inset 0 0 10px #" + color
+				backgroundColor : "#" + color,
+				boxShadow : "inset 0 0 10px #" + color
 			}, "SLOW");
 			/*$(obj).animate({
 				
 			}, "slow");*/
 			if (color == "ffffff" || color == "f5f5dc") {
-				color="d92c45";
+				color = "d92c45";
 			}
 			$(obj).animate({
-				
+
 				color : "#" + color
 			}, "fast");
 

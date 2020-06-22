@@ -15,6 +15,18 @@
 
 </head>
 <body>
+<a href = "menu_mem.jsp"><div class="menubtn1" style = "display: inline;
+    position: fixed;
+    margin-top: -7vh;
+    left: 1.5vw;
+    z-index: 100;">
+			<div
+				style="width: 30px; height: 4px; background-color: black; margin: 5px 0;"></div>
+			<div
+				style="width: 30px; height: 4px; background-color: black; margin: 5px 0;"></div>
+			<div
+				style="width: 30px; height: 4px; background-color: black; margin: 5px 0;"></div>
+		</div></a>
 	<div class="titlecontainer">
 		<h1 class="title">MY PAGE</h1>
 		<div class="titleexplain">

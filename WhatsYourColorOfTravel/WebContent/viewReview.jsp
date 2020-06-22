@@ -31,24 +31,37 @@
 
 </head>
 <body>
+<a href = "menu_mem.jsp"><div class="menubtn1" style = "display: inline;
+    position: fixed;
+    margin-top: -7vh;
+    left: 1.5vw;
+    z-index: 100;">
+			<div
+				style="width: 30px; height: 4px; background-color: black; margin: 5px 0;"></div>
+			<div
+				style="width: 30px; height: 4px; background-color: black; margin: 5px 0;"></div>
+			<div
+				style="width: 30px; height: 4px; background-color: black; margin: 5px 0;"></div>
+		</div></a>
 	<div class="titlecontainer">
 		<h1 class="title">REVIEW</h1>
 		<div class="titleexplain">
-			On this page, you can see the travel reviews that other people have written..<br>
-			Find out where the others have been.
+			On this page, you can see the travel reviews that other people have
+			written..<br> Find out where the others have been.
 		</div>
 	</div>
-	<div class="plus searchheader"  id="searchheader">
+	<div class="plus searchheader" id="searchheader">
+
 		<a href="board_write.jsp"><input type="button" value="+"
-			class="addbtn"></a>
-			
-  <input type = "text" name = "search" placeholder = "지역 검색하기"class = "search">
-  <button value = "검색" class = "searchclick">검색</button>
- 
+			class="addbtn"></a> <input type="text" name="search"
+			placeholder="지역 검색하기" class="search">
+		<button value="검색" class="searchclick">검색</button>
+		
 		<div class="menubtn">
 			<img src="img/review_menu1.png" class="menu menu4"><img
 				src="img/review_menu2.png" class="menu menu2">
 		</div>
+		
 	</div>
 	<div class="cardcontainer">
 		<%
@@ -101,19 +114,18 @@
 					num = rs.getString(5);
 					System.out.println(num);
 		%>
-		<%String classs = ""; 
-			if (Integer.parseInt(num) % 2 == 1) {
-				classs = "hol";
+		<%
+			String classs = "";
+					if (Integer.parseInt(num) % 2 == 1) {
+						classs = "hol";
+					} else if (Integer.parseInt(num) % 2 == 0) {
+						classs = "jjak";
 					}
-			else if(Integer.parseInt(num) % 2 == 0){
-				classs = "jjak"; 
-			}
 		%>
-		<div id="cardbox" class="card col-lg-5 <%=classs %>" id="card">
+		<div id="cardbox" class="card col-lg-5 <%=classs%>" id="card">
 			<div class="cardleft">
 				<img src="img/review_person.png" id="personimg" class="personimg" /><br>
-				<input type="text" class="idinput" value="<%=id%>"
-					disabled>
+				<input type="text" class="idinput" value="<%=id%>" disabled>
 				<!-- 아이디 나오는 칸 -->
 				<br> <input type="button" value="♥" class="heartbtn"
 					onclick="this.style.color = '#d92c45';"> <br>
@@ -135,16 +147,16 @@
 				onclick="document.getElementById('id<%=num%>').style.display='none'"
 				class="close" title="Close Modal" style="font-size: 60px;">&times;</span>
 			<table class="modaltable">
-				<tr class = "tilo lo">
+				<tr class="tilo lo">
 					<td><%=area%></td>
 				</tr>
-				<tr class = "tilo">
+				<tr class="tilo">
 					<td><%=title%></td>
 				</tr>
 				<tr>
 					<td><img src="data:image/png;base64, <%=encoded%>" /></td>
 				</tr>
-				<tr class = "review">
+				<tr class="review">
 					<td><%=oneIntro%></td>
 				</tr>
 			</table>
@@ -169,19 +181,21 @@
 			$('.card').addClass('col-lg-5');
 		});
 	</script>
-<script>
-window.onscroll = function() {myFunction()};
+	<script>
+		window.onscroll = function() {
+			myFunction()
+		};
 
-var header = document.getElementById("searchheader");
-var sticky = header.offsetTop;
+		var header = document.getElementById("searchheader");
+		var sticky = header.offsetTop;
 
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-</script>
+		function myFunction() {
+			if (window.pageYOffset > sticky) {
+				header.classList.add("sticky");
+			} else {
+				header.classList.remove("sticky");
+			}
+		}
+	</script>
 </body>
 </html>

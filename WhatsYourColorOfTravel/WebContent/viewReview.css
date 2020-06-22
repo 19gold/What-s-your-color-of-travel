@@ -181,6 +181,10 @@ body {
 	margin-top: 1vw;
 	height: 3vw;
 }
+.sticky .menubtn1{
+	margin-top: 0.8vw;
+	left:1vw;
+}
 
 .search {
 	border-radius: 20px;
