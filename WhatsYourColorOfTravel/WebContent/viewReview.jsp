@@ -5,6 +5,9 @@
 <%@page import="DB.databases"%>
 <%@page import="java.util.*"%>
 <%@page import="java.awt.*"%>
+<%@page import="DB.DBvar"%>
+<%@page import="DB.DBlist"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,20 +69,23 @@
 	<div class="cardcontainer">
 		<%
 			request.setCharacterEncoding("UTF-8");
-
 			Connection con = null;
 			Blob image = null;
 			byte[] imgData = null;
 			PreparedStatement pstmt = null;
 			Statement stmt = null;
 			ResultSet rs = null;
-
 			String num = null;
 			String title = null;
 			String area = null;
 			String oneIntro = null;
+			int likey=0;
 			String id = null;//세션으로 받는 id
+			
+			DBlist list = new DBlist();
+			DBvar dv = new DBvar();
 
+			
 			//session처리
 			id = (String) session.getAttribute("id");//세션 값 받음
 			if (id == null || id.equals("")) {
@@ -90,18 +96,14 @@
 		</script>
 		<%
 			}
-
 			try {
 				databases databases = new databases();
 				con = databases.getCon();//DB연동하기
 				System.out.println("view Mapage : DB연동성공");
-
 				stmt = con.createStatement();
 				System.out.println("stmt줄 실행");
-
-				String query = "SELECT title, area, image, oneIntro, num FROM reviews WHERE truefalse=1";
+				String query = "SELECT title, area, image, oneIntro, num, likey FROM reviews WHERE truefalse=1";
 				System.out.println(query);
-
 				rs = stmt.executeQuery(query);
 				System.out.println("rs : " + rs);
 				while (rs.next()) {
@@ -111,8 +113,8 @@
 					imgData = image.getBytes(1, (int) image.length());
 					String encoded = Base64.getEncoder().encodeToString(imgData);
 					oneIntro = rs.getString(4);
-					num = rs.getString(5);
-					System.out.println(num);
+					num = rs.getString(5);	
+					likey = rs.getInt(6);
 		%>
 		<%
 			String classs = "";
@@ -127,8 +129,7 @@
 				<img src="img/review_person.png" id="personimg" class="personimg" /><br>
 				<input type="text" class="idinput" value="<%=id%>" disabled>
 				<!-- 아이디 나오는 칸 -->
-				<br> <input type="button" value="♥" class="heartbtn"
-					onclick="this.style.color = '#d92c45';"> <br>
+				<br> <a href="viewReviewLike.jsp?num=<%=num%>"><%= likey%>명의 추천</a><br><!-- 좋아요 -->
 				<div class="went">
 					went to <span class="wentt"><%=area%></span>
 				</div>
@@ -185,10 +186,8 @@
 		window.onscroll = function() {
 			myFunction()
 		};
-
 		var header = document.getElementById("searchheader");
 		var sticky = header.offsetTop;
-
 		function myFunction() {
 			if (window.pageYOffset > sticky) {
 				header.classList.add("sticky");
