@@ -60,85 +60,86 @@
 		System.out.println(selectedActivity);//문화체험
 		System.out.println(selectedCharacter);//느긋한 - > DB에서 사용 안하고 프론트 쪽에서 색 표현시 사용
 		System.out.println("jsp에서 값 받기 성공");
-		int num1 = 0;
-		int num2 = 0;
-		int num3 = 0;
+		String num1;
+		String num2;
+		String num3;
+		
 	%>
 	<%
 		//분위기별 결과 이미지 
 		switch (temp[2]) {//mood
 		case "0":
-			num1 = 0;
+			num1 = "조용한";
 			break;
 		case "1":
-			num1 = 1;
+			num1 = "시끄러운";
 			break;
 		case "2":
-			num1 = 2;
+			num1 = "느긋한";
 			break;
 		case "3":
-			num1 = 3;
+			num1 = "독특한";
 			break;
 		case "4":
-			num1 = 4;
+			num1 = "이국적인";
 			break;
 		default:
-			num1 = 0;
+			num1 = "조용한";
 			break;
 		}
 
 		//자연별 결과 이미지 
 		switch (temp[3]) {//nature
 		case "0":
-			num2 = 0;
+			num2 = "산";
 			break;
 		case "1":
-			num2 = 1;
+			num2 = "바다";
 			break;
 		case "2":
-			num2 = 2;
+			num2 = "시골";
 			break;
 		case "3":
-			num2 = 3;
+			num2 = "도시";
 			break;
 		case "4":
-			num2 = 4;
+			num2 = "눈";
 			break;
 		default:
-			num2 = 0;
+			num2 = "산";
 			break;
 		}
 
 		//성격별 결과 이미지 
 		switch (temp[5]) {//character
 		case "0":
-			num3 = 0;
+			num3 = "활발한";
 			break;
 		case "1":
-			num3 = 1;
+			num3 = "느긋한2";
 			break;
 		case "2":
-			num3 = 2;
+			num3 = "급한";
 			break;
 		case "3":
-			num3 = 3;
+			num3 = "온화한";
 			break;
 		case "4":
-			num3 = 4;
+			num3 = "게으른";
 			break;
 		default:
-			num3 = 0;
+			num3 = "활발한";
 			break;
 		}
 	%>
 	<div class="colorimg">
 		<table class="colorimgtbl">
 			<tr>
-				<td class="td"><img class="mood img" src="test/<%=num1%>.jpg"></td>
-				<td class="td"><img class="nature img" src="test/<%=num2%>.jpg"></td>
+				<td class="td"><img class="mood img" src="test/<%=num1%>.png"></td>
+				<td class="td"><img class="nature img" src="test/<%=num2%>.png"></td>
 			</tr>
 			<tr>
-				<td class="td"><img class="character img" src="test/<%=num3%>.jpg"></td>
+				<td class="td"><img class="character img" src="test/<%=num3%>.png"></td>
 				<td class="td tdl">
 					<div id="explain" class="relative1">
 						<button id="btn1"onclick="location.href='viewMypage.jsp'">
