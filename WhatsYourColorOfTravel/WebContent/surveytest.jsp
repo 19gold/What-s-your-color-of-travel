@@ -295,7 +295,7 @@
 			class="submit6" value="next" width="100" />
 	</div>
 	<div id="div7" class="absolute7">
-<img src="img/paint_szszr.png" class="paintbtm"><br><br><span class = "thx">THANK YOU</span></span><BR>
+<img src="img/paint_szszr.png" class="paintbtm"><br><br><span class = "thx">THANK YOU</span><BR>
 		<br>
 		<br><button type="submit" id="submit7" class="submit7">Result</button>
 	</div>

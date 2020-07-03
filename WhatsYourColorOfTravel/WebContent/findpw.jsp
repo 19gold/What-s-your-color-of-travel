@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
@@ -13,7 +13,7 @@
 <head>
 <meta charset="utf-8">
 
-<title>What's your color of travel</title>
+<title>비밀번호 찾기</title>
 <link href="findpw.css?after" rel="stylesheet" type="text/css">
 
 <title>PWisfounded</title>
@@ -21,7 +21,7 @@
 <body>
 
 	<%
-	request.setCharacterEncoding("euc-kr");
+	request.setCharacterEncoding("utf-8");
 	databases databases = new databases();
 	DBvar dv = new DBvar();
 	DBlist dl = new DBlist();
@@ -29,25 +29,20 @@
 	System.out.println("findpw에서 db연동 확인");
 	String findId = request.getParameter("id");
 	String findName = request.getParameter("name");
-
 	System.out.println("findId: " + findId);
 	System.out.println("findName: " + findName);
-
+	out.println(findName);
 	String result=null;
 	
 	dv.setId(findId);
 	dv.setName(findName);
 	
-	
-	
-	
-
 	result = dl.FindPsw(dv);
 	
-	
+
 	System.out.println("findpsw의 result값 - > " + result);
 	if(result.equals("nofindpsw")) {%>
-		<script>alert("아이디가 없습니다. \n 회원가입 해주세요"); location.replace("signupup.jsp");</script>
+		out.println("아이디 없음.ㅌㅌ")</script>
 	<% }%>
 	
 			<div class="content">

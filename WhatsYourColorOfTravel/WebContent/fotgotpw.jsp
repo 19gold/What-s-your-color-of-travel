@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <title>What's your color of travel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="forgotpw.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<form action="findpw.jsp">
+	<form action="findpw.jsp" method="post">
 		<table>
 
 			<tr>

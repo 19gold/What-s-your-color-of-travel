@@ -8,7 +8,7 @@
 <meta name="keywords" content="웹표준, 웹접근성, 사이트">
 <meta name="generator" content="eclipse">
 <meta name="viewport" content="width=device-width, height=device-height">
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 <link rel="stylesheet" href="signupup.css">
 <!-- <link rel="stylesheet" href="css/reset.css"> -->
 <title>What's your color of travel</title>

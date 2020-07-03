@@ -5,9 +5,6 @@
 <%@page import="DB.databases"%>
 <%@page import="java.util.*"%>
 <%@page import="java.awt.*"%>
-<%@page import="DB.DBvar"%>
-<%@page import="DB.DBlist"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,11 +31,8 @@
 
 </head>
 <body>
-<a href = "menu_mem.jsp"><div class="menubtn1" style = "display: inline;
-    position: fixed;
-    margin-top: -7vh;
-    left: 1.5vw;
-    z-index: 100;">
+	<a href="menu_mem.jsp"><div class="menubtn1"
+			style="display: inline; position: fixed; margin-top: -7vh; left: 1.5vw; z-index: 100;">
 			<div
 				style="width: 30px; height: 4px; background-color: black; margin: 5px 0;"></div>
 			<div
@@ -59,33 +53,33 @@
 			class="addbtn"></a> <input type="text" name="search"
 			placeholder="지역 검색하기" class="search">
 		<button value="검색" class="searchclick">검색</button>
-		
+
 		<div class="menubtn">
 			<img src="img/review_menu1.png" class="menu menu4"><img
 				src="img/review_menu2.png" class="menu menu2">
 		</div>
-		
+
 	</div>
 	<div class="cardcontainer">
 		<%
 			request.setCharacterEncoding("UTF-8");
+
 			Connection con = null;
 			Blob image = null;
 			byte[] imgData = null;
 			PreparedStatement pstmt = null;
 			Statement stmt = null;
 			ResultSet rs = null;
+
 			String num = null;
 			String title = null;
 			String area = null;
 			String oneIntro = null;
-			int likey=0;
 			String id = null;//세션으로 받는 id
-			
-			DBlist list = new DBlist();
-			DBvar dv = new DBvar();
+			String id1 = null;//내용에 들어가는 id
+			int likey=0;
 
-			
+
 			//session처리
 			id = (String) session.getAttribute("id");//세션 값 받음
 			if (id == null || id.equals("")) {
@@ -96,14 +90,18 @@
 		</script>
 		<%
 			}
+
 			try {
 				databases databases = new databases();
 				con = databases.getCon();//DB연동하기
 				System.out.println("view Mapage : DB연동성공");
+
 				stmt = con.createStatement();
 				System.out.println("stmt줄 실행");
-				String query = "SELECT title, area, image, oneIntro, num, likey FROM reviews WHERE truefalse=1";
+
+				String query = "SELECT title, area, image, oneIntro, num, id, likey FROM reviews WHERE truefalse=1";
 				System.out.println(query);
+
 				rs = stmt.executeQuery(query);
 				System.out.println("rs : " + rs);
 				while (rs.next()) {
@@ -113,8 +111,12 @@
 					imgData = image.getBytes(1, (int) image.length());
 					String encoded = Base64.getEncoder().encodeToString(imgData);
 					oneIntro = rs.getString(4);
-					num = rs.getString(5);	
-					likey = rs.getInt(6);
+					num = rs.getString(5);
+					id1 = rs.getString(6);
+					likey = rs.getInt(7);
+
+					System.out.println(num);
+					System.out.println(id1);
 		%>
 		<%
 			String classs = "";
@@ -127,9 +129,9 @@
 		<div id="cardbox" class="card col-lg-5 <%=classs%>" id="card">
 			<div class="cardleft">
 				<img src="img/review_person.png" id="personimg" class="personimg" /><br>
-				<input type="text" class="idinput" value="<%=id%>" disabled>
+				<input type="text" class="idinput" value="<%=id1%>" disabled>
 				<!-- 아이디 나오는 칸 -->
-				<br> <a href="viewReviewLike.jsp?num=<%=num%>"><%= likey%>명의 추천</a><br><!-- 좋아요 -->
+				<br><a href="viewReviewLike.jsp?num=<%=num%>"><%= likey%>명의 추천</a> <br>
 				<div class="went">
 					went to <span class="wentt"><%=area%></span>
 				</div>
@@ -172,6 +174,9 @@
 			}
 		%>
 	</div>
+	<br>
+	<br>
+
 	<script>
 		$('.menu2').click(function() {
 			$('.card').removeClass('col-lg-5');
@@ -186,8 +191,10 @@
 		window.onscroll = function() {
 			myFunction()
 		};
+
 		var header = document.getElementById("searchheader");
 		var sticky = header.offsetTop;
+
 		function myFunction() {
 			if (window.pageYOffset > sticky) {
 				header.classList.add("sticky");

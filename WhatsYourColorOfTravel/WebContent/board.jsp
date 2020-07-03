@@ -7,7 +7,7 @@
 <title>What's your color of travel</title>
 
 <link href="board.css" rel="stylesheet" type="text/css">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
     function link(){
         location.href = "board_write.jsp";

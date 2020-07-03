@@ -8,7 +8,7 @@
 <link href="check.css" rel="stylesheet" type="text/css">
 <title>What's your color of travel</title>
 <script type="text/javascript"
-	src="http://code.jquery.com/jquery-latest.js"></script>
+	src="https://code.jquery.com/jquery-latest.js"></script>
 <script>
 	window.selectedOptions = {};//한번에 값을 넘기는 방법
 
@@ -296,7 +296,7 @@
 	</div>
 	<div id="div7" class="absolute7">
 		<img src="img/paint_szszr.png" class="paintbtm"><br> <br>
-		<span class="thx">THANK YOU</span></span><BR> <br> <br>
+		<span class="thx">THANK YOU</span><BR> <br> <br>
 		<button type="submit" id="submit7" class="submit7">Result</button>
 	</div>
 	<script>

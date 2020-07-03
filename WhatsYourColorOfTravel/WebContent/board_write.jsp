@@ -10,7 +10,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Open+Sans:wght@300&display=swap"
 	rel="stylesheet">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
 </head>
 <body>
@@ -32,7 +32,7 @@ id = (String)session.getAttribute("id");//세션 값 받음
 
 	<center>
 		<br>
-		<form action="board_writeDB.jsp" method="POST">
+		<form action="board_writeDB.jsp" method="POST" enctype="multipart/form-data">
 			<div class="contain">
 				<input type="text" class="title" placeholder="제목" name="title"><br>
 				<input type="text" class="local" placeholder="다녀온 지역" name="local"><br>
@@ -71,8 +71,7 @@ id = (String)session.getAttribute("id");//세션 값 받음
 	    $filename = $(this).val();
 
 	    if($filename == "")
-	        $filename = "占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쌍쇽옙占쏙옙.";
-
+	        $filename = "파일을 선택해주세요.";
 	    $(".filename").text($filename);
 
 	})

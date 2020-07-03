@@ -29,7 +29,7 @@ result=list.likeCount(var);
 if(result!=1){
 %>
 	<script>
-	alert('���ƿ䰡 ���������� ó������ �ʾҽ��ϴ�.');
+	alert('좋아요가 정상적으로 처리되지 않았습니다.');
 	location.replace('viewReview.jsp');
 	</script>
 	
@@ -38,7 +38,7 @@ if(result!=1){
 %>
 	<script>
 	location.replace('viewReview.jsp');
-	aler('���ƿ� : '+<%=result%>);
+	aler('좋아요 : '+<%=result%>);
 	</script>
 	<%
 }

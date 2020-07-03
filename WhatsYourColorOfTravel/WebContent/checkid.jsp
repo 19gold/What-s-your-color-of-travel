@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page import="java.sql.Connection"%>
@@ -14,20 +14,20 @@
 	text-align: center;
 }
 </style>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <title>What's your color of travel</title>
 </head>
 <body>
 
 
 	<%
-		request.setCharacterEncoding("euc-kr");
+		request.setCharacterEncoding("utf-8");
 
 		databases databases = new databases();
 		DBvar dv = new DBvar();
 		DBlist dl = new DBlist();
 		Connection con = databases.getCon();
-		System.out.println("checkid���� db���� Ȯ��");
+		System.out.println("checkid에서 db연동 확인");
 		String msg, url;
 
 		String id = request.getParameter("id");
@@ -39,19 +39,19 @@
 		if (check == 1) {
 	%>
 
-	<b onload="ckid(0)"><font color="red"><%=id%></font>�� �̹� �������
-		���̵��Դϴ�.</b>
+	<b onload="ckid(0)"><font color="red"><%=id%></font>는 이미 사용중인
+		아이디입니다.</b>
 	<form name="checkForm" method="post" action="checkid.jsp">
-		<b>�ٸ� ���̵� �����ϼ���.</b><br> <br> <input type="text" name="id">
-		<input type="submit" value="ID�ߺ�Ȯ��">
+		<b>다른 아이디를 선택하세요.</b><br> <br> <input type="text" name="id">
+		<input type="submit" value="ID중복확인">
 	</form>
 	<%
 		} else {
 	%>
 	<div class="center1">
-		<b>�Է��Ͻ�<font color="red"><%=id%></font>��<br> ����Ͻ� �� �ִ� ID�Դϴ�.
+		<b>입력하신<font color="red"><%=id%></font>는<br> 사용하실 수 있는 ID입니다.
 		</b><br> <br>
-		<button id="close_popup">�ݱ�</button>
+		<button id="close_popup">닫기</button>
 	</div>
 	<%
 		}
