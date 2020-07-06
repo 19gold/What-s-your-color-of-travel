@@ -8,6 +8,7 @@
 <title>What's your color of travel</title>
 </head>
 <body>
+	
 	<div class="contain">
 		<div class="survey">
 			<br> <br>
@@ -42,8 +43,10 @@
 			<div class="explain_text">
 				Look at my own travel records<br>and the color of my feelings!
 			</div>
-			<Button id="btn1" onclick="location.href='viewMypage.jsp'">VIEW MY REVIEW
-				></Button>
+			<Button id="btn1" onclick="location.href='viewMypage.jsp'">VIEW MY REVIEW</Button>
+		</div>
+		<div class="chat">
+			<script id="embeddedChatbot" data-botId="Bdv5w4" src="https://www.closer.ai/js/webchat.min.js"> </script>
 		</div>
 	</div>
 </body>

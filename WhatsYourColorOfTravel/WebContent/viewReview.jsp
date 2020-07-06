@@ -164,6 +164,9 @@
 				</tr>
 			</table>
 		</div>
+		<div class="chat">
+			<script id="embeddedChatbot" data-botId="Bdv5w4" src="https://www.closer.ai/js/webchat.min.js"> </script>
+		</div>
 
 		<%
 			}

@@ -7,16 +7,23 @@
 <%@page import="DB.DBlist"%>
 <%@page import="java.util.*"%>
 <%@page import="java.awt.*"%>
-<%@ page import="java.util.*"%>
-<%@ page import="java.io.File"%>
-<%@ page import="java.io.FileOutputStream"%>
-<%
-	request.setCharacterEncoding("UTF-8");
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert an Image into MySQL Database</title>
+</head>
+<body>
+	<%
+	request.setCharacterEncoding("utf-8");
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 	databases databases = new databases();
-	DBvar dv = new DBvar();
-	DBlist dl = new DBlist();
-	Connection con = null;
-	Statement stmt = null;
+	
+	FileInputStream fis = null;
 	String id=null;
 	id = (String)session.getAttribute("id");//세션 값 받음
 	String title = request.getParameter("title");
@@ -24,8 +31,7 @@
 	String oneIntro = request.getParameter("oneIntro");
 	String img = request.getParameter("img");
 	String truefalse = request.getParameter("OkNotcheck");	
-	//String publicPrivate = request.getParameter("publicPrivate");
-	//System.out.println("publicPrivate : "+publicPrivate);
+
 	boolean truefalseCheck = false;
 	System.out.println("truefalse : "+truefalse);
 	System.out.println("title : "+title);
@@ -35,39 +41,53 @@
 		truefalseCheck=true;
 		System.out.println("truefalseCheck : "+truefalseCheck);
 	}
-	
-	try {//public Connection getDBConnection()
-		con = databases.getCon();//DB연동하기
+	try {
+		conn = databases.getCon();
+		out.println("1<br>");
+		out.println("conn : "+conn+"<br>");
 		
-		stmt = con.createStatement();
-		File imgfile = new File(img);
-		
-		FileInputStream fin = new FileInputStream(imgfile);
-		
+		File image_img = new File(img);
+		fis = new FileInputStream(image_img);
+		out.println("2<br>");
 		String sql = "INSERT INTO reviews (id, area, title,image,oneIntro,truefalse) VALUES(?,?,?,?,?,?);";
+		pstmt = conn.prepareStatement(sql);
 		
-		PreparedStatement pre = con.prepareStatement(sql);
+		pstmt.setString(1, id);
+		pstmt.setString(2, local);
+		pstmt.setString(3, title);
+		//(InputStream)
+		pstmt.setBinaryStream(4,  fis, (int)image_img.length());
+		pstmt.setString(5,oneIntro);
+		pstmt.setBoolean(6,truefalseCheck);
 		
 		
-		pre.setString(1,id);//id저장
 		
-		pre.setString(2, local);//지역저장
-		
-		pre.setString(3, title);
+		int count = pstmt.executeUpdate();
+		if (count > 0) {
+			out.println("갑자기 성공");
+		} else {
+			out.println("안ㄷ뫼ㅠㅠㅠ");
+		}
+	} catch (Exception ex) {
+		out.println("resone: " + ex.getMessage());
+	} finally {
+		try {
+			if (rs != null) {
+		rs.close();
+		rs = null;
+			}
+			if (pstmt != null) {
+		pstmt.close();
+		pstmt = null;
+			}
+			if (conn != null) {
+		conn.close();
 			
-		pre.setBinaryStream(4, fin, (int) imgfile.length());//Stream형의 파일 업로드
-		
-		pre.setString(5, oneIntro);
-		pre.setBoolean(6,truefalseCheck);
-		pre.executeUpdate();
-		System.out.println("Inserting Successfully!");
-		
-		pre.close();
-		con.close();
-	} catch (Exception e) {
-		System.out.println("resone " + e.getMessage());
-		System.out.println("됐겠니? 하요");
-		out.println("resone " + e.getMessage());
-		out.println("됐겠니? 하요");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-%>
+	%>
+</body>
+</html>
