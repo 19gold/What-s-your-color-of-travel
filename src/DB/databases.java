@@ -8,11 +8,12 @@ public class databases {
 		Connection con = null;
 		try {
 			Class.forName("org.gjt.mm.mysql.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gold?&useSSL=false","root","mirim2");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/travelcolor?",
+					"travelcolor", "Mf2D51eIYTETb2Ju");
 			System.out.println("DB연동성공");
 			return con;
 		}catch(ClassNotFoundException ce) {
-			System.out.println("databases.java에서DB연동실패");
+			System.out.println("DB연동실패");
 			return null;
 		}
 	}

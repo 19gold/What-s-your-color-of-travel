@@ -86,12 +86,12 @@ public class DBlist {
 		return x;
 	}
 
-	public String FindPsw(DBvar dv) {// ��й�ȣ ã�� �ϴ� �κ�
-	
+	public String FindPsw(DBvar dv) {// 비밀번호 찾기 하는 부분
+		
 		String checkpsw = "nofindpsw";
 		try {
 			String sql = "select psw from member where name=? and id=?";
-			// �̸��� ���̵� �Է��Ͽ� ��й�ȣ ã�� sql��
+			// 이름과 아이디를 입력하여 비밀번호 찾는 sql문
 
 			System.out.println("sql = " + sql);
 
@@ -101,18 +101,18 @@ public class DBlist {
 			System.out.println("sql ->" + sql);
 			pstmt.setString(1, dv.getName());
 			pstmt.setString(2, dv.getId());
-			System.out.println("dv.get??()Ȯ��");
+			System.out.println("dv.get??()확인");
 			
 			rs = pstmt.executeQuery();
 			System.out.println("rs : " + rs);
 
 			while(rs.next()) {
 				checkpsw = rs.getString("psw");
-				System.out.println("rs.next()����!!");
+				System.out.println("rs.next()들어옴!!");
 			}
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());
-			System.out.println("try �� ����!");
+			System.out.println("try 못 들어옴!");
 		} finally {
 			try {
 				if (pstmt != null)
@@ -126,51 +126,10 @@ public class DBlist {
 		return checkpsw;
 	}
 
-	public ArrayList<String> Asurvey(DBvar dv) {// ������ ����� DBlist�� mood ���� �η��ͼ� �´��� Ȯ��
-		
-		ArrayList<String> result = new ArrayList<>();
-		
-		try {
-			String sql_1 = "select image from result_list where area=? and mood=? and nature=? and activity=?";
-			System.out.println("Asurvey -> " + sql_1);
-			con = databases.getCon();
-			pstmt = con.prepareStatement(sql_1);
-			System.out.println("Asurvey�� con -> " + pstmt);
-			rs = pstmt.executeQuery();
-			
-			
-			pstmt.setString(1, dv.getLocation());
-			pstmt.setString(2, dv.getMood());
-			pstmt.setString(3, dv.getNature());
-			pstmt.setString(4, dv.getActivity());
-
-			System.out.println("query : " + pstmt.toString());
-			
-			System.out.println("Asurvey�� rs : " + rs);
-			
-			while(rs.next()) {
-				//result.add(rs.getString("country"));
-			}
-
-		} catch (SQLException se) {
-			System.out.println(se.getMessage());
-			System.out.println("DB try ������~");
-		} finally {
-			try {
-				if (pstmt != null)
-					pstmt.close();
-				if (con != null)
-					con.close();
-			} catch (SQLException se) {
-				System.out.println(se.getMessage());
-			}
-		}
-		return result;
-		
-	}
+	
 	public int likeCount(DBvar dv) {//추천수
 		int result=0;
-		sql = "UPDATE reviews SET `likey` = `likey`+1 WHERE num = ?;";
+		sql = "UPDATE reviews SET likey = `likey`+1 WHERE num = ?;";
 		
 		try {
 			con = databases.getCon();

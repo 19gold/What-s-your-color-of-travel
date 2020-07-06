@@ -1,20 +1,20 @@
 package DB;
 
 public class DBvar {
-	//tableï¿½Ì¸ï¿½ -> member
+	//tableÀÌ¸§ -> member
 	private String name;//name_member
 	private String id;//id_member;
 	private String psw;//psw_member;
 	private String email;//email_member;
 	
-	//tableï¿½Ì¸ï¿½ -> result_list
+	//tableÀÌ¸§ -> result_list
 	private String location;//location_result_list
 	private String country; //country_result_list
 	private String mood; //mood_result_list
 	private String nature; //nature_result_list
 	private String activity;//activity_result_list
 	
-	
+
 	private int likey;
 	private int num;
 	
